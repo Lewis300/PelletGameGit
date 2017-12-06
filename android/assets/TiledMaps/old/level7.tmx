@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="8" height="12" tilewidth="128" tileheight="128" nextobjectid="27">
+ <properties>
+  <property name="ambientlight" type="float" value="0.95"/>
+  <property name="pelletpause" type="float" value="3.75"/>
+  <property name="scale" type="float" value="2"/>
+ </properties>
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <objectgroup name="mirrors">
+  <object id="20" x="768" y="1280" width="128" height="128"/>
+  <object id="25" x="512" y="768" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="settingslayer" width="8" height="12">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwkAAYAAAQ==
+  </data>
+ </layer>
+ <objectgroup name="pelletstarts">
+  <object id="21" x="256" y="128" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="d"/>
+    <property name="initialdelay" type="float" value="1"/>
+    <property name="pelletpause" type="float" value="2.5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="22" x="128" y="256" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="trackpoints">
+  <object id="23" x="768" y="256" width="128" height="128">
+   <properties>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-3"/>
+   </properties>
+  </object>
+  <object id="24" x="256" y="1280" width="128" height="128">
+   <properties>
+    <property name="groupcolor" type="color" value="#ff0000ff"/>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-2"/>
+    <property name="linkedid" type="int" value="-1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="tilelayer" width="8" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAOMOORY8EixkakudQGTANkL7p/iXUHABRoABg=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,31 @@
+{
+  "com.badlogic.gdx.graphics.Color":{
+    "white":{"r": 1, "g": 1, "b": 1, "a": 1},
+    "black":{"r": 0, "g": 0, "b": 0, "a": 1},
+    "red":{"r": 1, "g": 0, "b": 0, "a": 1},
+    "green":{"r": 0, "g": 1, "b": 0, "a": 1},
+    "blue":{"r": 0, "g": 0, "b": 1, "a": 1}
+  },
+
+  "com.badlogic.gdx.graphics.g2d.BitmapFont":
+  {
+    "white": {"file": "Misc/LevelSelectMenu/fonts/levelnums.fnt"}
+  },
+
+  "com.badlogic.gdx.scenes.scene2d.ui.List$ListStyle":{
+    "default": {"font": "white", "fontColorUnselected": "blue", "fontColorSelected": "red", "selection": "selectedColor"}
+  },
+
+  "com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle":{
+    "default": {}
+  },
+
+  "com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle":{
+    "default":{"font": "white"}
+  }
+
+  "com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle":
+  {
+    "default": {"font": "white", "fontColor": "blue", "downFontColor": "green"}
+  }
+}

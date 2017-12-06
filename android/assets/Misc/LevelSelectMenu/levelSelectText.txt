@@ -1,0 +1,82 @@
+levelSelectText.png
+size: 1721, 299
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+0
+  rotate: false
+  xy: 0, 0
+  size: 183, 297
+  orig: 183, 297
+  offset: 0, 0
+  index: -1
+1
+  rotate: false
+  xy: 183, 0
+  size: 171, 291
+  orig: 171, 291
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 354, 0
+  size: 171, 296
+  orig: 171, 296
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 525, 0
+  size: 161, 299
+  orig: 161, 299
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 686, 0
+  size: 172, 291
+  orig: 172, 291
+  offset: 0, 0
+  index: -1
+5
+  rotate: false
+  xy: 858, 0
+  size: 173, 297
+  orig: 173, 297
+  offset: 0, 0
+  index: -1
+6
+  rotate: false
+  xy: 1031, 0
+  size: 171, 297
+  orig: 171, 297
+  offset: 0, 0
+  index: -1
+7
+  rotate: false
+  xy: 1202, 0
+  size: 168, 290
+  orig: 168, 290
+  offset: 0, 0
+  index: -1
+8
+  rotate: false
+  xy: 1370, 0
+  size: 166, 298
+  orig: 166, 298
+  offset: 0, 0
+  index: -1
+9
+  rotate: false
+  xy: 1536, 0
+  size: 184, 294
+  orig: 184, 294
+  offset: 0, 0
+  index: -1
+selectedColor
+  rotate: false
+  xy: 1720, 0
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1

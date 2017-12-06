@@ -1,0 +1,19 @@
+menuButton.png
+size: 256, 100
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+levelSelectMenuBtn
+  rotate: false
+  xy: 0, 0
+  size: 128, 100
+  orig: 128, 100
+  offset: 0, 0
+  index: -1
+levelSelectMenuBtnDown
+  rotate: false
+  xy: 128, 0
+  size: 128, 100
+  orig: 128, 100
+  offset: 0, 0
+  index: -1

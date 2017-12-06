@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="11" height="11" tilewidth="128" tileheight="128" nextobjectid="19">
+ <properties>
+  <property name="ambientlight" type="float" value="0.95"/>
+  <property name="pelletpause" type="float" value="1.5"/>
+  <property name="scale" value="2.3"/>
+ </properties>
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="settingslayer" width="11" height="11">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="pelletpause" type="float" value="1.5"/>
+   <property name="scale" type="float" value="2.3333"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwx0AAAHkAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="5" x="640" y="384" width="128" height="128"/>
+  <object id="6" x="128" y="384" width="128" height="128"/>
+  <object id="8" x="128" y="640" width="128" height="128"/>
+  <object id="9" x="128" y="896" width="128" height="128"/>
+  <object id="10" x="896" y="896" width="128" height="128"/>
+  <object id="11" x="896" y="1152" width="128" height="128"/>
+  <object id="13" x="640" y="1152" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="15" x="128" y="128" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="d"/>
+    <property name="initialdelay" type="float" value="1"/>
+    <property name="pelletpause" type="float" value="1.5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="18" x="1152" y="640" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="blocks">
+  <object id="17" x="384" y="1152" width="128" height="128"/>
+ </objectgroup>
+ <layer name="tilelayer" width="11" height="11">
+  <data encoding="base64" compression="zlib">
+   eJxjYCANMJOonljAhMk/QCVz8ZrDQr65uMQXkGkkCmBEmJeAzz5iAABAUgKX
+  </data>
+ </layer>
+</map>

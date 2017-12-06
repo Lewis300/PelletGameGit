@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="23" tilewidth="128" tileheight="128" nextobjectid="13">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="settingslayer" width="15" height="23">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="1.8333"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQCsAAAVkAAE=
+  </data>
+ </layer>
+ <layer name="tilelayer" width="15" height="23">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAvYGJgWEBN81gosI+Rmg4hAQDdlEBAnmQ9xJgxFAEzAXlYuJAaPoMNkBG/C0g1g9p5DwYoyUdE5N8BBdSwHwBsKgTq
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="6" x="1664" y="128" width="128" height="128"/>
+  <object id="7" x="128" y="896" width="128" height="128"/>
+  <object id="8" x="1664" y="896" width="128" height="128"/>
+  <object id="9" x="1664" y="1408" width="128" height="128"/>
+  <object id="10" x="1664" y="1920" width="128" height="128"/>
+  <object id="11" x="128" y="1920" width="128" height="128"/>
+  <object id="12" x="1664" y="2688" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="blocks">
+  <object id="4" x="128" y="512" width="128" height="128"/>
+  <object id="5" x="128" y="2304" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="2" x="128" y="128" width="128" height="128"/>
+  <object id="3" x="128" y="2688" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="1" x="128" y="1408" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="r"/>
+    <property name="initialdelay" type="float" value="1"/>
+    <property name="pelletpause" type="float" value="4"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

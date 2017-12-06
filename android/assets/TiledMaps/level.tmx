@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="15">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0"/>
+   <property name="scale" type="float" value="0"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors"/>
+ <objectgroup name="pelletends"/>
+ <objectgroup name="pelletstarts"/>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks"/>
+ <objectgroup name="toggles"/>
+ <objectgroup name="wallportals"/>
+</map>

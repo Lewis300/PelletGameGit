@@ -1,0 +1,215 @@
+lineAnimAtlas.png
+size: 30, 1280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+line
+  rotate: false
+  xy: 0, 0
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 1
+line
+  rotate: false
+  xy: 10, 0
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 2
+line
+  rotate: false
+  xy: 20, 0
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 3
+line
+  rotate: false
+  xy: 0, 128
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 4
+line
+  rotate: false
+  xy: 10, 128
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 5
+line
+  rotate: false
+  xy: 20, 128
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 6
+line
+  rotate: false
+  xy: 0, 256
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 7
+line
+  rotate: false
+  xy: 10, 256
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 8
+line
+  rotate: false
+  xy: 20, 256
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 9
+line
+  rotate: false
+  xy: 0, 384
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 10
+line
+  rotate: false
+  xy: 10, 384
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 11
+line
+  rotate: false
+  xy: 20, 384
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 12
+line
+  rotate: false
+  xy: 0, 512
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 13
+line
+  rotate: false
+  xy: 10, 512
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 14
+line
+  rotate: false
+  xy: 20, 512
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 15
+line
+  rotate: false
+  xy: 0, 640
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 16
+line
+  rotate: false
+  xy: 10, 640
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 17
+line
+  rotate: false
+  xy: 20, 640
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 18
+line
+  rotate: false
+  xy: 0, 768
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 19
+line
+  rotate: false
+  xy: 10, 768
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 20
+line
+  rotate: false
+  xy: 20, 768
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 21
+line
+  rotate: false
+  xy: 0, 896
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 22
+line
+  rotate: false
+  xy: 10, 896
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 23
+line
+  rotate: false
+  xy: 20, 896
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 24
+line
+  rotate: false
+  xy: 0, 1024
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 25
+line
+  rotate: false
+  xy: 10, 1024
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 26
+line
+  rotate: false
+  xy: 20, 1024
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 27
+line
+  rotate: false
+  xy: 0, 1152
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 28
+line
+  rotate: false
+  xy: 10, 1152
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 29
+line
+  rotate: false
+  xy: 20, 1152
+  size: 10, 128
+  orig: 10, 128
+  offset: 0, 0
+  index: 30

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="24" tilewidth="128" tileheight="128" nextobjectid="14">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAMsCGxWXGI41I/CkYBLsCMQ5yJgWEBKepHAXmAcaAdQGfAMtAOwAEAbvoAxQ==
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="1" x="896" y="1408" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="blocks">
+  <object id="2" x="896" y="2176" width="128" height="128">
+   <properties>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="toggles">
+  <object id="3" x="512" y="128" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-1"/>
+    <property name="isbutton" type="bool" value="false"/>
+    <property name="startson" type="bool" value="true"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="5" x="1664" y="1408" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="l"/>
+   </properties>
+  </object>
+  <object id="6" x="128" y="1408" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="r"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="7" x="896" y="2688" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="trackpoints">
+  <object id="9" x="1664" y="128" width="128" height="128">
+   <properties>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-4"/>
+   </properties>
+  </object>
+  <object id="10" x="896" y="128" width="128" height="128">
+   <properties>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-3"/>
+   </properties>
+  </object>
+  <object id="11" x="128" y="128" width="128" height="128">
+   <properties>
+    <property name="groupcolor" type="color" value="#ffaa5500"/>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-2"/>
+    <property name="linkedid" type="int" value="-1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="settingslayer" width="15" height="24">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="pelletpause" type="float" value="2.5"/>
+   <property name="scale" type="float" value="2"/>
+   <property name="shootsimultaneously" type="bool" value="false"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBgBAAWgAAE=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="14" height="24" tilewidth="128" tileheight="128" nextobjectid="22">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="settingslayer" width="14" height="24">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="pelletpause" type="float" value="3.75"/>
+   <property name="scale" type="float" value="2"/>
+   <property name="shootsimultaneously" type="bool" value="true"/>
+   <property name="waitbetweenfires" type="bool" value="false"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQA4AAAVAAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="2" x="640" y="512" width="128" height="128"/>
+  <object id="3" x="128" y="512" width="128" height="128"/>
+  <object id="4" x="1024" y="2432" width="128" height="128"/>
+  <object id="5" x="1536" y="2432" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="blocks">
+  <object id="6" x="1152" y="512" width="128" height="128"/>
+  <object id="7" x="512" y="2432" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="8" x="640" y="128" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="d"/>
+    <property name="initialdelay" type="float" value="0"/>
+    <property name="pelletpause" type="float" value="6"/>
+   </properties>
+  </object>
+  <object id="10" x="1024" y="2816" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="u"/>
+    <property name="initialdelay" type="float" value="3"/>
+    <property name="pelletpause" type="float" value="6"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="wallportals">
+  <object id="14" x="1536" y="0" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-1"/>
+    <property name="linkedid" type="int" value="-3"/>
+    <property name="side" value="t"/>
+    <property name="startingaction" value="disable"/>
+    <property name="toggleid" type="int" value="-5"/>
+   </properties>
+  </object>
+  <object id="16" x="0" y="512" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-2"/>
+    <property name="linkedid" type="int" value="-4"/>
+    <property name="side" value="l"/>
+   </properties>
+  </object>
+  <object id="17" x="1664" y="2432" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-3"/>
+    <property name="linkedid" type="int" value="-1"/>
+    <property name="side" value="r"/>
+   </properties>
+  </object>
+  <object id="18" x="128" y="2944" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-4"/>
+    <property name="linkedid" type="int" value="-2"/>
+    <property name="side" value="b"/>
+    <property name="startingaction" value="disable"/>
+    <property name="toggleid" type="int" value="-6"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="toggles">
+  <object id="19" x="1536" y="512" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-5"/>
+    <property name="isbutton" type="bool" value="false"/>
+    <property name="linkedid" type="int" value="-1011"/>
+    <property name="startson" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="20" x="128" y="2432" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-6"/>
+    <property name="isbutton" type="bool" value="true"/>
+    <property name="linkedid" type="int" value="-4"/>
+    <property name="startson" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="12" x="1536" y="128" width="128" height="128"/>
+  <object id="13" x="128" y="2816" width="128" height="128"/>
+ </objectgroup>
+ <layer name="tilelayer" width="14" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYCANsOORY8Yjx0KiPdQCIPcyMTAcQBZjQlPDiMRmpbWDRsEoGKIAOW8woslhy2P4ygpaAnxlDb4yihz3AgCjOAG/
+  </data>
+ </layer>
+</map>

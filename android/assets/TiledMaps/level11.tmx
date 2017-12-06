@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="55">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJy9VEEOwCAIY24P5Wk8haeZHUwWB1rWZL2oTaWNoiIcroRvIrrTH0Wvqj5Dlu3M9RFnG49KHmdrgD4G6jyab/bol0xVZP2GgOkfxHe+r7/OhEGbRkCvaM3H2gqRkAwe8Yv3+/IfHNrfN5j/avFPWsQzfT7QAbgrCbI=
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2.5"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="16" gid="2" x="1024" y="256" width="128" height="128" rotation="-90"/>
+  <object id="17" gid="2" x="256" y="640" width="128" height="128" rotation="-90"/>
+  <object id="18" gid="2" x="1664" y="640" width="128" height="128"/>
+  <object id="19" gid="2" x="384" y="640" width="128" height="128" rotation="90"/>
+  <object id="22" gid="2" x="1408" y="768" width="128" height="128"/>
+  <object id="23" gid="2" x="1664" y="896" width="128" height="128"/>
+  <object id="24" gid="2" x="1024" y="768" width="128" height="128" rotation="180"/>
+  <object id="25" gid="2" x="384" y="1024" width="128" height="128" rotation="90"/>
+  <object id="26" gid="2" x="1792" y="1024" width="128" height="128" rotation="180"/>
+  <object id="27" gid="2" x="256" y="1152" width="128" height="128" rotation="180"/>
+  <object id="28" gid="2" x="1536" y="1280" width="128" height="128" rotation="-90"/>
+  <object id="29" gid="2" x="128" y="1920" width="128" height="128"/>
+  <object id="30" gid="2" x="768" y="1920" width="128" height="128" rotation="-90"/>
+  <object id="31" gid="2" x="128" y="2304" width="128" height="128"/>
+  <object id="32" gid="2" x="384" y="2304" width="128" height="128"/>
+  <object id="33" gid="2" x="1792" y="2304" width="128" height="128" rotation="-90"/>
+  <object id="34" gid="2" x="896" y="2432" width="128" height="128"/>
+  <object id="35" gid="2" x="1408" y="2304" width="128" height="128" rotation="90"/>
+  <object id="36" gid="2" x="256" y="2560" width="128" height="128" rotation="180"/>
+  <object id="37" gid="2" x="1664" y="2560" width="128" height="128" rotation="90"/>
+  <object id="38" gid="2" x="384" y="2688" width="128" height="128" rotation="90"/>
+  <object id="39" gid="2" x="768" y="2688" width="128" height="128" rotation="180"/>
+  <object id="40" gid="2" x="896" y="2944" width="128" height="128" rotation="90"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="47" gid="4" x="1664" y="256" width="128" height="128"/>
+  <object id="48" gid="4" x="128" y="256" width="128" height="128"/>
+  <object id="49" gid="4" x="896" y="1536" width="128" height="128"/>
+  <object id="50" gid="4" x="896" y="1792" width="128" height="128"/>
+  <object id="51" gid="4" x="1664" y="3072" width="128" height="128"/>
+  <object id="52" gid="4" x="128" y="3072" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="53" gid="3" x="896" y="2688" width="128" height="128">
+   <properties>
+    <property name="fireallatonce" type="bool" value="true"/>
+    <property name="firedirections" value="lrd"/>
+    <property name="initialdelay" type="float" value="2"/>
+    <property name="pelletpause" type="float" value="2"/>
+   </properties>
+  </object>
+  <object id="54" gid="3" x="896" y="640" width="128" height="128">
+   <properties>
+    <property name="fireallatonce" type="bool" value="true"/>
+    <property name="firedirections" value="lru"/>
+    <property name="initialdelay" type="float" value="3"/>
+    <property name="pelletpause" type="float" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks">
+  <object id="41" gid="1" x="128" y="384" width="128" height="128"/>
+  <object id="43" gid="1" x="1664" y="384" width="128" height="128"/>
+  <object id="44" gid="1" x="896" y="1664" width="128" height="128"/>
+  <object id="45" gid="1" x="1664" y="2944" width="128" height="128"/>
+  <object id="46" gid="1" x="128" y="2944" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="toggles"/>
+ <objectgroup name="wallportals"/>
+</map>

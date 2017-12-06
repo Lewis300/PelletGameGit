@@ -1,0 +1,12 @@
+levelSelectMenuBackGround.png
+size: 630, 1120
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+levelSelectMenuBackground
+  rotate: false
+  xy: 0, 0
+  size: 630, 1120
+  orig: 630, 1120
+  offset: 0, 0
+  index: -1

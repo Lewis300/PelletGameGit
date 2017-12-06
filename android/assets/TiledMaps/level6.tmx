@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="32">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAeYCFRfBTQB+AKfyYS1Q9FAPRjAozNjCq+gO6OoRHAE78HSFE/CugD6FVOAgDsKAHs
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="19" gid="2" x="896" y="1152" width="128" height="128"/>
+  <object id="20" gid="2" x="1280" y="1536" width="128" height="128" rotation="90"/>
+  <object id="21" gid="2" x="1024" y="2048" width="128" height="128" rotation="180"/>
+  <object id="22" gid="2" x="640" y="1664" width="128" height="128" rotation="-90"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="23" gid="4" x="1664" y="2176" width="128" height="128"/>
+  <object id="24" gid="4" x="1664" y="1152" width="128" height="128"/>
+  <object id="25" gid="4" x="1280" y="256" width="128" height="128"/>
+  <object id="26" gid="4" x="512" y="256" width="128" height="128"/>
+  <object id="27" gid="4" x="128" y="1152" width="128" height="128"/>
+  <object id="28" gid="4" x="128" y="2176" width="128" height="128"/>
+  <object id="29" gid="4" x="512" y="3072" width="128" height="128"/>
+  <object id="30" gid="4" x="1280" y="3072" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="15" gid="3" x="896" y="1664" width="128" height="128">
+   <properties>
+    <property name="fireallatonce" type="bool" value="true"/>
+    <property name="firedirections" value="udlr"/>
+    <property name="initialdelay" type="float" value="2.5"/>
+    <property name="pelletpause" type="float" value="3.5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks"/>
+ <objectgroup name="toggles"/>
+ <objectgroup name="wallportals"/>
+</map>

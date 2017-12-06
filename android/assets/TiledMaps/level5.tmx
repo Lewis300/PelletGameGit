@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="24">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYKANYKaRudQCTAwMCVjEsKkbBaNgFIwCMACWBwdgbBYozYjGh6pbQCcn4QQA3t4B1w==
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="16" gid="2" x="896" y="640" width="128" height="128"/>
+  <object id="17" gid="2" x="1536" y="640" width="128" height="128"/>
+  <object id="18" gid="2" x="384" y="640" width="128" height="128" rotation="-90"/>
+  <object id="19" gid="2" x="384" y="2816" width="128" height="128" rotation="180"/>
+  <object id="20" gid="2" x="1536" y="2816" width="128" height="128" rotation="90"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="22" gid="4" x="1152" y="2944" width="128" height="128"/>
+  <object id="23" gid="4" x="640" y="2944" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="15" gid="3" x="896" y="256" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="d"/>
+    <property name="initialdelay" type="float" value="2"/>
+    <property name="pelletpause" type="float" value="2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks">
+  <object id="21" gid="1073741825" x="896" y="2944" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="toggles"/>
+ <objectgroup name="wallportals"/>
+</map>

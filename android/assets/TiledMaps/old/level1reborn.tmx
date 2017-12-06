@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="11" height="11" tilewidth="128" tileheight="128" nextobjectid="1">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="mirrors" width="11" height="11">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgcgAmTf4BK5lLFHCzm4hJfQGV7EvDZRwwAADdaAo8=
+  </data>
+ </layer>
+ <layer name="blocks" width="11" height="11">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgxEwUtEsAAIwAAI=
+  </data>
+ </layer>
+ <layer name="pelletstart1" width="11" height="11">
+  <properties>
+   <property name="fireDirections" value="d"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYCANMJOofhQMPAAABwAABA==
+  </data>
+ </layer>
+ <layer name="pelletends" width="11" height="11">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjZgGWgHUAHAAAFdAAF
+  </data>
+ </layer>
+</map>
