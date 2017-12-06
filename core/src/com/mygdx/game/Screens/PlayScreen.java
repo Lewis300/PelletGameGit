@@ -297,7 +297,7 @@ public class PlayScreen extends GameScreen
         //gameTable.debugAll();
         //lvlTable.debugAll();
         //gamestage.setDebugAll(true);
-        b2dr.render(world, gamecam.combined);
+        //b2dr.render(world, gamecam.combined);
 
         if(isInLvlMenu()){}
     }
