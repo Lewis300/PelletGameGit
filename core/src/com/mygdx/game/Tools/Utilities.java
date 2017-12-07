@@ -264,6 +264,11 @@ public class Utilities
                                 side)
                                 .setMapPos(objX, mapHeight-objY-1));
                     }
+
+                    //Makes sure that if the WallPortal object is on the top, its y index is not -1
+                    if(side == 't'){obs.get(obs.size()-1).setMapPos(objX, 1);}
+
+                    //System.out.println(obs.get(obs.size()-1).getMapY()+", "+obs.get(obs.size()-1).getMapX());
                 }
                 else if(layerName.toLowerCase().contains("trackpoint"))
                 {

@@ -62,6 +62,8 @@ public class Toggle extends Obstacle
         this.isButton = isButton;
         initializedCount = 0;
 
+        centerObstacleAtAllTimes = false;
+
         buttonSprite = createScaledSprite(buttonTex);
         if(isOn)currentColor = Color.GREEN;
         else{currentColor = Color.RED;}
@@ -81,6 +83,8 @@ public class Toggle extends Obstacle
         this.isButton = isButton;
         initializedCount = 0;
 
+        centerObstacleAtAllTimes = false;
+
         buttonSprite = createScaledSprite(buttonTex);
         if(isOn)currentColor = Color.GREEN;
         else{currentColor = Color.RED;}
@@ -95,8 +99,8 @@ public class Toggle extends Obstacle
     @Override
     public void defineBody() 
     {
-        buttonSprite.setX(getX()-buttonSprite.getWidth()/2);
-        buttonSprite.setY(getY()-buttonSprite.getHeight()/2);
+        buttonSprite.setX(getX() + getWidth()/2 - buttonSprite.getWidth()/2);
+        buttonSprite.setY(getY()+ getHeight()/2 - buttonSprite.getHeight()/2);
 
         if(buttonBody!=null){
             PlayScreen.world.destroyBody(buttonBody);}
@@ -115,6 +119,7 @@ public class Toggle extends Obstacle
     @Override
     public void act(float delta)
     {
+
         if(linkedObs == null)
         {
             linkedObs = new ArrayList<Obstacle>();
@@ -132,20 +137,14 @@ public class Toggle extends Obstacle
         if(isChanging)
         {
             hittime += delta;
-            for (Pellet pellet : PlayScreen.pellets)
-            {
-                if (pellet.id.equals(pelletId + ""))
-                {
-                    calculateBump(Gdx.graphics.getDeltaTime(), pellet);
-                    break;
-                }
-            }
+            calculateBump(Gdx.graphics.getDeltaTime());
+
             if (hittime > 0.2f)
             {
                 isChanging = false;
                 hittime = 0f;
-                buttonSprite.setX(getX() - buttonSprite.getWidth() / 2);
-                buttonSprite.setY(getY() - buttonSprite.getHeight() / 2);
+                buttonSprite.setX(getX() + getWidth()/2 - buttonSprite.getWidth() / 2);
+                buttonSprite.setY(getY() + getHeight()/2 - buttonSprite.getHeight() / 2);
                 if(onTrack)calculateBody();
             }
             buttonSprite.setColor(currentColor);
@@ -166,7 +165,7 @@ public class Toggle extends Obstacle
     {
         buttonSprite.setX(getX() + buttonSprite.getWidth()/4);
         buttonSprite.setY(getY() + buttonSprite.getHeight()/4);
-        position.set(buttonSprite.getX()+buttonSprite.getHeight()/2, buttonSprite.getY()+buttonSprite.getHeight()/2);
+        position.set(buttonSprite.getX(), buttonSprite.getY());
         shape.setPosition(position);
 
         fdef.shape = shape;
@@ -263,7 +262,7 @@ public class Toggle extends Obstacle
 
     }
 
-    private void calculateBump(float delta, Pellet pellet)
+    private void calculateBump(float delta)
     {
         float extra = 1;
 
@@ -303,8 +302,8 @@ public class Toggle extends Obstacle
            }
            else
            {
-               origX = getX() - buttonSprite.getWidth() / 2;
-                origY = getY() - buttonSprite.getHeight() / 2;
+               origX = getX() + getWidth()/2 - buttonSprite.getWidth() / 2;
+               origY = getY() + getWidth()/2 - buttonSprite.getHeight() / 2;
            }
 
             if (buttonSprite.getY() > origY)

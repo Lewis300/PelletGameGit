@@ -23,8 +23,6 @@ import box2dLight.PointLight;
  * Created by Lewis on 8/12/2017.
  */
 
-//TODO TEST OLD LEVEL 8
-
 public class Pellet_End extends PelletHole
 {
     private Sprite laserEnd;

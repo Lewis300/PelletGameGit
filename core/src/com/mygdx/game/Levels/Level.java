@@ -69,7 +69,8 @@ public class Level
             for (int i = 0; i < obstacles.length; i++)
             {
                 //System.out.println(obstacles[i].getMapX()+", "+obstacles[i].getMapY()+"      "+obstacles[i].getType());
-                map[obstacles[i].getMapY()][obstacles[i].getMapX()] = obstacles[i];
+                if(!(obstacles[i].getMapY() < 0)){map[obstacles[i].getMapY()][obstacles[i].getMapX()] = obstacles[i];}
+                else{map[0][obstacles[i].getMapX()] = obstacles[i];}
             }
         }
     }

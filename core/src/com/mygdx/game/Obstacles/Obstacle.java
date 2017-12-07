@@ -22,7 +22,7 @@ import static com.badlogic.gdx.graphics.g2d.ParticleEmitter.SpawnShape.point;
  * Created by Lewis on 8/25/2017.
  */
 
-//TODO FIX OBSTACLE POSITIONS
+//TODO GET ALL OBSTACLES WORKING IN TILED
 
 public abstract class Obstacle extends Actor
 {
@@ -133,21 +133,27 @@ public abstract class Obstacle extends Actor
 
     public static final float pointMoveTime = 1f;
 
+    public boolean centerObstacleAtAllTimes = true;
+
     @Override
     public void act(float delta)
     {
 
-        try{
-            getSprite().setX(getX() + getWidth()/2 - getSprite().getWidth()/3);
-            getSprite().setY(getY() + getHeight()/2 - getSprite().getWidth()/3);
+       if(centerObstacleAtAllTimes)
+       {
+            try
+            {
+                getSprite().setX(getX() + getWidth()/2 - getSprite().getWidth()/3);
+                getSprite().setY(getY() + getHeight()/2 - getSprite().getWidth()/3);
 
-            centerX = getSprite().getX();
-            centerY = getSprite().getY();
-        }
-        catch (Exception e)
-        {
-            //getSprite().setPosition(centerX, centerY);
-        }
+                centerX = getSprite().getX();
+                centerY = getSprite().getY();
+            }
+            catch (Exception e)
+            {
+                //getSprite().setPosition(centerX, centerY);
+            }
+       }
 
 
         if(isId){id = givenId;}
@@ -379,7 +385,7 @@ public abstract class Obstacle extends Actor
         }
 
 
-        box.setPosition(x - box.getWidth()/2,y - box.getHeight()/2);
+        box.setPosition(getX() + getWidth()/2 - box.getWidth()/2,getY() + getWidth()/2 - box.getHeight()/2);
 
         box.draw(batch);
     }

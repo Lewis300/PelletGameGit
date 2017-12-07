@@ -82,6 +82,8 @@ public class WallPortal extends Obstacle
     @Override
     public void defineBody()
     {
+
+
         if(hitbody != null){
             PlayScreen.world.destroyBody(hitbody);}
 
@@ -102,7 +104,7 @@ public class WallPortal extends Obstacle
         }
         else if(side == 'b')
         {
-            poly.setPosition(new Vector2(getX(), 0 - Pellet.getWidth()*3.4f));
+            poly.setPosition(new Vector2(getX(), - Pellet.getWidth()*3.4f));
         }
         else if(side == 'l')
         {
@@ -126,12 +128,13 @@ public class WallPortal extends Obstacle
     @Override
     public void act(float delta)
     {
-        if(initialized < 2)
+
+        if(initialized < 5)
         {
-            if(side == 't')light.setPosition(getX(), PlayScreen.gameport.getWorldHeight() + PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6));
-            else if(side == 'r')light.setPosition(PlayScreen.gameport.getWorldWidth() + PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6), getY());
-            else if(side == 'b')light.setPosition(getX(), 0- PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6));
-            else if(side == 'l')light.setPosition(0- PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6), getY());
+            if(side == 't')light.setPosition(getX() + getWidth()/2, PlayScreen.gameport.getWorldHeight() + PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6));
+            else if(side == 'r')light.setPosition(PlayScreen.gameport.getWorldWidth() + PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6), getY() + getHeight()/2);
+            else if(side == 'b')light.setPosition(getX() + getWidth()/2, -PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6));
+            else if(side == 'l')light.setPosition(-PlayScreen.gameport.getWorldWidth()/(PlayScreen.scale*6), getY() + getHeight()/2);
 
             defineBody();
 
@@ -168,7 +171,7 @@ public class WallPortal extends Obstacle
     @Override
     public void handleCollision(Pellet pellet)
     {
-        if(open && !pellet.collided)
+        if(open && !pellet.justInteracted)
         {
             if(getOtherPortal().open)
             {
@@ -176,7 +179,6 @@ public class WallPortal extends Obstacle
                 pellet.direction = getOtherPortal().fireDirection;
             }
 
-            pellet.collided = true;
             pellet.justInteracted = true;
         }
     }
@@ -217,13 +219,13 @@ public class WallPortal extends Obstacle
     {
         if(spawnX == -1) {
             if (side == 'r') {
-                spawnX = getX();
+                spawnX = PlayScreen.gameport.getWorldWidth() + Pellet.getWidth();
             } else if (side == 'l') {
-                spawnX = 0;
+                spawnX = -Pellet.getWidth();
             } else if (side == 'b') {
-                spawnX = getX() - Pellet.getWidth() / 2;
+                spawnX = getX() + getWidth()/2 - Pellet.getWidth() / 2;
             } else if (side == 't') {
-                spawnX = getX() - Pellet.getWidth() / 2;
+                spawnX = getX()  + getWidth()/2 - Pellet.getWidth() / 2;
             }
         }
         return spawnX;
@@ -233,9 +235,9 @@ public class WallPortal extends Obstacle
     {
         if(spawnY == -1) {
             if (side == 'r') {
-                return getY() - Pellet.getWidth() / 2;
+                spawnY = getY() + getHeight()/2 - Pellet.getWidth() / 2;
             } else if (side == 'l') {
-                spawnY = getY() - Pellet.getWidth() / 2;
+                spawnY = getY() + getHeight()/2 - Pellet.getWidth() / 2;
             } else if (side == 'b') {
                 spawnY = 0 - Pellet.getWidth() / 2;
             } else if (side == 't') {

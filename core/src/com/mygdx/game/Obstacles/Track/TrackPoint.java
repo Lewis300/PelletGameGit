@@ -402,7 +402,7 @@ public class TrackPoint extends Obstacle
             batch.setColor(batch.getColor().r, batch.getColor().g, batch.getColor().b, pSprite.getColor().a);
             batch.draw(pSprite, pSprite.getX(), pSprite.getY(), pSprite.getWidth(), pSprite.getHeight());
             batch.setColor(group.color.r, group.color.g, group.color.b, pSprite.getColor().a);
-            batch.draw(dSprite, dSprite.getX(), dSprite.getY(), dSprite.getWidth(), dSprite.getHeight());
+            batch.draw(dSprite, origin.x - dSprite.getWidth()/2, origin.y - dSprite.getHeight()/2, dSprite.getWidth(), dSprite.getHeight());
 
         }
         batch.setColor(defaultColor);
