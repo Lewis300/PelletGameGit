@@ -188,9 +188,6 @@ public class Pellet_End extends PelletHole
                 fillPellet.setX(getX() + thisWidth/2 - fillPellet.getWidth()/2);
                 fillPellet.setY(getY() + thisWidth/2 - fillPellet.getWidth()/2);
 
-
-                System.out.println(laserEnd.getX()+", "+laserEnd.getY());
-
             }
             else if(!fillPelletIn && laserEnd.getWidth() > 0)
             {

@@ -30,6 +30,8 @@
  <tile id="4" type="toggle">
   <properties>
    <property name="id" type="int" value="999"/>
+   <property name="isbutton" type="bool" value="false"/>
+   <property name="startson" type="bool" value="false"/>
   </properties>
   <image width="83" height="83" source="../Obstacles/toggleBlank.png"/>
  </tile>

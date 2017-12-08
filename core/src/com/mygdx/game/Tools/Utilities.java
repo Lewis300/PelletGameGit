@@ -239,7 +239,7 @@ public class Utilities
                     else
                     {
                         obs.add(new Toggle(
-                                Integer.parseInt(props.get("id", String.class)),
+                                Integer.parseInt(props.get("id").toString()),
                                 Boolean.parseBoolean(props.get("startson", String.class)),
                                 Boolean.parseBoolean(props.get("isbutton", String.class)))
                                 .setMapPos(objX, mapHeight-objY-1));
@@ -266,7 +266,7 @@ public class Utilities
                     }
 
                     //Makes sure that if the WallPortal object is on the top, its y index is not -1
-                    if(side == 't'){obs.get(obs.size()-1).setMapPos(objX, 1);}
+                    //if(side == 't'){obs.get(obs.size()-1).setMapPos(objX, 2);}
 
                     //System.out.println(obs.get(obs.size()-1).getMapY()+", "+obs.get(obs.size()-1).getMapX());
                 }
