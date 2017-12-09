@@ -15,6 +15,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.DelayAction;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -53,8 +54,8 @@ public class PlayScreen extends GameScreen
     public static Viewport gameport;
 
     //Stage and table
-    public static Table lvlTable;
-    public static Table gameTable;
+    private static Table lvlTable;
+    private static Table gameTable;
         //For fading animation
         public static float pelletAlpha = 0f;
 
@@ -236,14 +237,6 @@ public class PlayScreen extends GameScreen
     public void render(float delta)
     {
         super.render(delta);
-//
-//        if(!renderedOnce)
-//        {
-//            renderedOnce = true;
-//            lmg.setLevelnum(lmg.getLevelNum()-1);
-//            levelIsChanging = true;
-//            drawLevelText = false;
-//        }
 
         update(dt);
         menuButton.act(delta);
@@ -337,9 +330,6 @@ public class PlayScreen extends GameScreen
             gameport.update(width, height);
             doneInitialResize++;
         }
-
-
-
     }
 
     @Override
