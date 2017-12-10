@@ -10,6 +10,7 @@ import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.mygdx.game.Buttons.PlayButton;
 import com.mygdx.game.PelletGame;
+import com.mygdx.game.PelletStuff.Pellet;
 
 /**
  * Created by Lewis on 8/20/2017.
@@ -36,7 +37,7 @@ public class MenuScreen extends GameScreen
         this.game = game;
 
 
-        menuport = new ExtendViewport(game.WIDTH/game.PPM, game.HEIGHT/game.PPM);
+        menuport = new ExtendViewport(PelletGame.WIDTH/PelletGame.PPM, PelletGame.HEIGHT/PelletGame.PPM);
 
         menustage = new Stage(menuport, game.batch);
         Gdx.input.setInputProcessor(menustage);
@@ -51,16 +52,15 @@ public class MenuScreen extends GameScreen
         centertable.center();
         centertable.setFillParent(true);
 
-        centertable.add(new PlayButton()).expand();
-
-        menustage.addActor(toptable);
-        menustage.addActor(bottomtable);
+        centertable.add(new PlayButton()).center().fill();
 
         menustage.addActor(centertable);
 
+        menustage.setDebugAll(true);
+
     }
 
-    public void update(float dt)
+    private void update(float dt)
     {
         if(fadeOutTime >=1f){
             PelletGame.gsm.setCurrentscreen("playscreen"); game.setTheScreen(PelletGame.gsm.getScreen());}
@@ -77,7 +77,7 @@ public class MenuScreen extends GameScreen
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         game.batch.begin();
-        game.batch.draw(game.backgroundTex , 0-menuport.getWorldWidth()/2,0- menuport.getWorldHeight() , 4000,4000);
+        game.batch.draw(PelletGame.backgroundTex , 0-menuport.getWorldWidth()/2,0- menuport.getWorldHeight() , 4000,4000);
         game.batch.end();
 
         menustage.act(delta);

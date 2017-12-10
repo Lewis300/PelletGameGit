@@ -44,7 +44,7 @@ public class PlayButton extends Actor
         button.setOriginCenter();
 
         setOrigin(button.getOriginX(), button.getOriginY());
-        //setBounds(button.getX(), button.getY(), button.getWidth(), button.getHeight());
+        setBounds(button.getX(), button.getY(), button.getWidth(), button.getHeight());
 
         touchedDownCoords = new Vector2();
         touchedUpCoords = new Vector2();

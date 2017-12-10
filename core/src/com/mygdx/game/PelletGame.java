@@ -52,7 +52,7 @@ public class PelletGame extends Game
 
 		batch = new SpriteBatch();
         gsm = new GameScreenManager(this);
-        gsm.setCurrentscreen("playscreen");
+        gsm.setCurrentscreen("menuscreen");
         setTheScreen(gsm.getScreen());
 
         new LevelSelectMenu();

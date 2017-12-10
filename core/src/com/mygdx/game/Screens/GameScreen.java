@@ -63,7 +63,6 @@ public abstract class GameScreen implements Screen
         }
         else
         {
-            //if(menu.isVisible()){menu.setVisible(false);}
             percentDt = Math.min(percentDt - minusAcceleration*delta, 1);
         }
         this.dt = delta*percentDt;
@@ -75,16 +74,9 @@ public abstract class GameScreen implements Screen
         }
     }
 
-    public void renderMenu()
-    {
-
-    }
-
     public boolean isInLvlMenu(){return inLvlMenu;}
 
     public boolean addedMenu = false;
-    private float menuYNegative;
-
     public void addMenuToStage()
     {
         if(!addedMenu)
@@ -102,6 +94,4 @@ public abstract class GameScreen implements Screen
     }
 
     public LevelSelectMenu getLevelSelectMenu(){return menu;}
-
-
 }
