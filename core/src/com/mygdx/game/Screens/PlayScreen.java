@@ -56,8 +56,9 @@ public class PlayScreen extends GameScreen
     //Stage and table
     private static Table lvlTable;
     private static Table gameTable;
-        //For fading animation
-        public static float pelletAlpha = 0f;
+
+    //For fading animation
+    public static float pelletAlpha = 0f;
 
     //Level change
     private static boolean enteringFromMenu = true;
