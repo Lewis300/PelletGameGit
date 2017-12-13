@@ -1,6 +1,10 @@
 package com.mygdx.game.Levels;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -10,8 +14,12 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Cell;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.mygdx.game.Misc.LevelMarker;
+import com.mygdx.game.Misc.LevelSelectMenu;
 import com.mygdx.game.Obstacles.Blank;
 import com.mygdx.game.Obstacles.Mirror;
 import com.mygdx.game.Obstacles.Obstacle;
@@ -20,6 +28,8 @@ import com.mygdx.game.Obstacles.Pellet_Start;
 import com.mygdx.game.Obstacles.Track.TrackGroup;
 import com.mygdx.game.Obstacles.Track.TrackPoint;
 import com.mygdx.game.Obstacles.WallPortal;
+import com.mygdx.game.PelletGame;
+import com.mygdx.game.PelletStuff.Pellet;
 import com.mygdx.game.Screens.PlayScreen;
 import com.mygdx.game.Tools.SpawnHandler;
 
@@ -196,6 +206,8 @@ public class Level
                 else if(i == map.length-1 && j == map[0].length-1)
                 {
                     table.add(PlayScreen.menuButton).size(PlayScreen.gameport.getScreenWidth()/40, PlayScreen.gameport.getScreenWidth()/40);
+
+
                 }
                 else
                 {
@@ -215,6 +227,17 @@ public class Level
             table.setFillParent(true);
         }
 
+        Actor levelMarker = new Actor()
+        {
+
+        };
+        table.row();
+        Skin markerSkin = LevelSelectMenu.paneSkin;
+        table.setSkin(markerSkin);
+        Label lvlMarker = new Label(LevelManager.levelnum+"", markerSkin);
+        lvlMarker.setStyle(markerSkin.get("levelMarker", Label.LabelStyle.class));
+        lvlMarker.getStyle().fontColor = Color.GRAY;
+        table.add(lvlMarker).center().size(PlayScreen.gameport.getScreenWidth()/40, PlayScreen.gameport.getScreenWidth()/40);
 
     }
 

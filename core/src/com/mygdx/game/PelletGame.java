@@ -13,8 +13,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.mygdx.game.Levels.LevelManager;
 import com.mygdx.game.Misc.LevelSelectMenu;
+import com.mygdx.game.Screens.PlayScreen;
 import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
 import com.mygdx.game.Tools.SmartFontGenerator;
@@ -43,6 +45,8 @@ public class PelletGame extends Game
 	public void create ()
     {
         prefs = Gdx.app.getPreferences("game.prefs");
+
+        sfg = new SmartFontGenerator();
         initFonts();
 
         backgroundTex = new Texture("backGroundColor.png");
@@ -52,10 +56,11 @@ public class PelletGame extends Game
 
 		batch = new SpriteBatch();
         gsm = new GameScreenManager(this);
-        gsm.setCurrentscreen("menuscreen");
+        gsm.setCurrentscreen("playscreen");
         setTheScreen(gsm.getScreen());
 
         new LevelSelectMenu();
+
 
         Gdx.input.setCatchBackKey(true);
 	}
@@ -88,21 +93,24 @@ public class PelletGame extends Game
         setScreen(screen);
     }
 
+    public static BitmapFont markerFont;
+
+    public static SmartFontGenerator sfg;
     private static void initFonts()
     {
+        try
+        {
+            font44 = sfg.createFont(Gdx.files.local("Fonts/BPtypewrite.ttf"), "endfont", 44);
 
-        try{
-            SmartFontGenerator sfg = new SmartFontGenerator();
+            font44.getData().setScale(0.2857142857142857f);
 
-        font44 = sfg.createFont(Gdx.files.local("Fonts/BPtypewrite.ttf"), "endfont", 44);
+            font440 = new BitmapFont(sfg.getFontFile("levelfont.fnt", 440));
+            font440.getData().setScale(0.2857142857142857f);
 
-        font44.getData().setScale(0.2857142857142857f);
+            markerFont = new BitmapFont(sfg.getFontFile("levelfont.fnt", 440));
 
-        font440 = new BitmapFont(sfg.getFontFile("levelfont.fnt", 440));
-        font440.getData().setScale(0.2857142857142857f);
-
-        prefs.putBoolean("createdFont", true);
-        prefs.flush();
+            prefs.putBoolean("createdFont", true);
+            prefs.flush();
         }
         catch (Exception e)
         {

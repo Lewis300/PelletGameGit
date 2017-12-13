@@ -48,7 +48,7 @@ public class LevelSelectMenu extends Table
     private float stageNegativeY;
 
     private ScrollPane pane;
-    private Skin paneSkin;
+    public static Skin paneSkin;
     private List list;
     public Table btnTable;
 

@@ -70,7 +70,7 @@ public class PlayScreen extends GameScreen
     private static Color backgroundSpriteColor;
 
     private static GlyphLayout lvlChangeLayout;
-    private static String lvlChangeText;
+    public static String lvlChangeText = "";
     private static float lvlTextWidth;
     private static float lvlTextHeight;
 
@@ -233,6 +233,7 @@ public class PlayScreen extends GameScreen
             hasSentObstaclesToPoints = true;
         }
         rayHandler.update();
+
     }
 
     private boolean renderedOnce = false;
@@ -243,13 +244,14 @@ public class PlayScreen extends GameScreen
 
         update(dt);
         menuButton.act(delta);
+
         //Clear screen
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         game.batch.setColor(1, 1, 1, 1);
         game.batch.begin();
-        game.batch.draw(PelletGame.backgroundTex, -10000, -10000, 20000f, 20000f);
+        game.batch.draw(PelletGame.backgroundTex, 0,0, gameport.getScreenWidth(), gameport.getScreenHeight());
 
         //System.out.println(dt);
 
@@ -267,7 +269,7 @@ public class PlayScreen extends GameScreen
         if (levelIsChanging && fadeTime != 0.0f && fadeTime < 5.45f)
         {
             game.batch.begin();
-            game.backgroundSprite.draw(game.batch);
+            PelletGame.backgroundSprite.draw(game.batch);
             if(drawLevelText)
             {
                 PelletGame.font440.draw(game.batch, lvlChangeText,
@@ -286,7 +288,7 @@ public class PlayScreen extends GameScreen
             calculateEnterToPlayStateFade(dt);
 
             game.batch.begin();
-            game.backgroundSprite.draw(game.batch);
+            PelletGame.backgroundSprite.draw(game.batch);
             game.batch.end();
         }
 
@@ -294,8 +296,6 @@ public class PlayScreen extends GameScreen
         //lvlTable.debugAll();
         //gamestage.setDebugAll(true);
         //b2dr.render(world, gamecam.combined);
-
-        if(isInLvlMenu()){}
     }
 
     @Override
