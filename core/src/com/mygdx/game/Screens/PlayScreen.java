@@ -183,7 +183,7 @@ public class PlayScreen extends GameScreen
     {
         handleInput(dt);
 
-        if(menuButton.isPressed() && !isInLvlMenu() && !levelIsChanging && timePassed>=1.5f)
+        if(menuButton.isPressed() && !isInLvlMenu() && !levelIsChanging && timePassed>=0.5f)
         {
             openLvlSelectMenu();
             lvlTable.setTouchable(Touchable.disabled);
@@ -285,9 +285,10 @@ public class PlayScreen extends GameScreen
 
         game.batch.end();
 
+        rayHandler.render();
         gamestage.draw();
 
-        rayHandler.render();
+
 
         if (levelIsChanging && fadeTime != 0.0f && fadeTime < 5.45f)
         {

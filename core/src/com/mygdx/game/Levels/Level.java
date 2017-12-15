@@ -236,7 +236,7 @@ public class Level
         table.setSkin(markerSkin);
         Label lvlMarker = new Label(LevelManager.levelnum+"", markerSkin);
         lvlMarker.setStyle(markerSkin.get("levelMarker", Label.LabelStyle.class));
-        lvlMarker.getStyle().fontColor = Color.GRAY;
+        lvlMarker.getStyle().fontColor = Color.WHITE;
         table.add(lvlMarker).center().size(PlayScreen.gameport.getScreenWidth()/40, PlayScreen.gameport.getScreenWidth()/40);
 
     }
