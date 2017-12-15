@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.GlyphLayout;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
@@ -28,7 +29,9 @@ import com.mygdx.game.Obstacles.Pellet_End;
 import com.mygdx.game.Obstacles.Toggle;
 import com.mygdx.game.PelletGame;
 import com.mygdx.game.PelletStuff.Pellet;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
+import com.mygdx.game.Tools.Utilities;
 import com.mygdx.game.Tools.WorldContactListener;
 import java.util.ArrayList;
 import box2dLight.RayHandler;
@@ -94,11 +97,26 @@ public class PlayScreen extends GameScreen
 
     private static int pelletSpeedMult = 1;
 
-    public PlayScreen(PelletGame game){this.game = game;}
+    private ShapeRenderer sr;
+    private Color[] backGroundColors;
+
+    public PlayScreen(GameScreenManager gsm, PelletGame game)
+    {
+        super(gsm);
+        this.game = game;
+    }
 
     public void create()
     {
         Gdx.input.setCatchBackKey(true);
+
+        sr = new ShapeRenderer();
+        sr.setAutoShapeType(true);
+        backGroundColors = new Color[4];
+        backGroundColors[0] = Color.BLUE;
+        backGroundColors[1] = Color.RED;
+        backGroundColors[2] = Color.OLIVE;
+        backGroundColors[3] = Color.PINK;
 
         gamecam = new OrthographicCamera(game.WIDTH/PPM, game.HEIGHT/PPM);
         gamecam.position.set(game.WIDTH/2/PPM, game.HEIGHT/2/PPM, 0);
@@ -249,9 +267,14 @@ public class PlayScreen extends GameScreen
         Gdx.gl.glClearColor(1, 1, 1, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+
+        sr.begin(ShapeRenderer.ShapeType.Filled);
+        sr.rect(0, 0, gameport.getScreenWidth(), gameport.getScreenHeight(), backGroundColors[0], backGroundColors[1], backGroundColors[2], backGroundColors[3]);
+        sr.end();
+
         game.batch.setColor(1, 1, 1, 1);
         game.batch.begin();
-        game.batch.draw(PelletGame.backgroundTex, 0,0, gameport.getScreenWidth(), gameport.getScreenHeight());
+        //game.batch.draw(PelletGame.backgroundTex, 0,0, gameport.getScreenWidth(), gameport.getScreenHeight());
 
         //System.out.println(dt);
 
@@ -308,7 +331,7 @@ public class PlayScreen extends GameScreen
                 create();
 
                 //Initialze Level Manager
-                lmg = new LevelManager();
+                lmg = new LevelManager(gsm);
                 lmg.createScales();
                 scale = lmg.getScale();
                 lmg.create();
@@ -363,6 +386,7 @@ public class PlayScreen extends GameScreen
         world.dispose();
         b2dr.dispose();
         rayHandler.dispose();
+        sr.dispose();
         super.dispose();
     }
 
@@ -414,7 +438,7 @@ public class PlayScreen extends GameScreen
             if(!goneToNextLevel)
             {
                 rayHandler.removeAll();
-                lmg.goToNextLevel(world, gamestage, lvlTable, pellets);
+                lmg.goToNextLevel(world, gamestage, lvlTable, pellets, backGroundColors);
                 getLevelSelectMenu().updateLvlMenu();
                 addedMenu = false;
                 levelsPassedSinceOpen++;

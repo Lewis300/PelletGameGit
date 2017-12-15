@@ -37,6 +37,7 @@ public class WallPortal extends Obstacle
 
     public WallPortal(int id, int linkedId, char side)
     {
+        super(null);
         makeId(id);
         this.linkedId = linkedId;
         this.side = side;
@@ -55,6 +56,7 @@ public class WallPortal extends Obstacle
     private boolean isPrimaryPortal = false;
     public WallPortal(int id, int linkedId, char side, int toggleId, String action)
     {
+        super(null);
         this.id = id;
         this.linkedId = linkedId;
         this.side = side;

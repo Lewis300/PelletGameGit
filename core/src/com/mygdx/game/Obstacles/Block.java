@@ -15,7 +15,9 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.mygdx.game.PelletGame;
 import com.mygdx.game.PelletStuff.Pellet;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
+
 
 /**
  * Created by Lewis on 8/12/2017.
@@ -44,14 +46,16 @@ public class Block extends Obstacle
     private float posY = 0;
 
 
-    public Block()
+    public Block(GameScreenManager gsm)
     {
+        super(gsm);
         create();
         defineBody();
     }
 
-    public Block(int id)
+    public Block(GameScreenManager gsm, int id)
     {
+        super(gsm);
         create();
         makeId(id);
         defineBody();
@@ -106,7 +110,7 @@ public class Block extends Obstacle
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button)
             {
-                if(!PelletGame.gsm.getScreen().isInLvlMenu())
+                if(!gsm.getScreen().isInLvlMenu())
                 {
                     hit++;
                     if(hit>2){hit = 2;}

@@ -39,6 +39,8 @@ public class Pellet_Start extends PelletHole
     public int fireCount = 0;
 
     private PointLight startLight;
+    private PointLight startLight1;
+    private PointLight startLight2;
     private float lightDistance = 0;
 
     private float initialDelayTime = 0;
@@ -55,6 +57,8 @@ public class Pellet_Start extends PelletHole
 
         lightDistance = 120f/ PlayScreen.PPM/SCALE;
         startLight = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
+        startLight1 = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
+        startLight2 = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
         startLight.setXray(true);
 
         //Create the Sprite
@@ -76,6 +80,8 @@ public class Pellet_Start extends PelletHole
 
         lightDistance = 120f/ PlayScreen.PPM/SCALE;
         startLight = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
+        startLight1 = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
+        startLight2 = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
         startLight.setXray(true);
 
 
@@ -93,6 +99,8 @@ public class Pellet_Start extends PelletHole
 
         lightDistance = 120f/ PlayScreen.PPM/SCALE;
         startLight = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
+        startLight1 = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
+        startLight2 = new PointLight(PlayScreen.rayHandler, 20, Color.WHITE, lightDistance, PlayScreen.PPM/SCALE, PlayScreen.gameport.getWorldHeight()-(PlayScreen.PPM/SCALE));
         startLight.setXray(true);
 
         //Create the Sprite
@@ -223,6 +231,8 @@ public class Pellet_Start extends PelletHole
         centerY = getY() + getHeight()/2 - laserStart.getWidth()/3;
 
         startLight.setPosition(centerX+getWidth()/2, centerY+getHeight()/2);
+        startLight1.setPosition(centerX+getWidth()/2, centerY+getHeight()/2);
+        startLight2.setPosition(centerX+getWidth()/2, centerY+getHeight()/2);
 
         if(!initialized)
         {

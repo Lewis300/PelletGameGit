@@ -1,10 +1,13 @@
 package com.mygdx.game.Screens;
 
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.ParticleEmitter;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.mygdx.game.Misc.LevelSelectMenu;
 import com.mygdx.game.PelletStuff.Pellet;
+import com.mygdx.game.Tools.GameScreenManager;
 
 /**
  * Created by Lewis on 11/16/2017.
@@ -22,12 +25,18 @@ public abstract class GameScreen implements Screen
     private float stopTime = 0.3f;
     private float percentDt = 1;
 
-    private LevelSelectMenu menu = new LevelSelectMenu();
+    private LevelSelectMenu menu;
 
     public float dt;
 
-    public GameScreen()
+    public GameScreenManager gsm;
+
+    private ShapeRenderer sr;
+
+    public GameScreen(GameScreenManager gsm)
     {
+        this.gsm = gsm;
+        menu = new LevelSelectMenu(gsm);
         minusAcceleration = (0 - percentDt)/stopTime;
     }
 

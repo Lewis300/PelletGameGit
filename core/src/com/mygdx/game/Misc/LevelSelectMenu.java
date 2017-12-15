@@ -22,6 +22,7 @@ import com.mygdx.game.PelletGame;
 import com.mygdx.game.PelletStuff.Pellet;
 import com.mygdx.game.Screens.PlayScreen;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
 
 import java.util.ArrayList;
@@ -56,8 +57,11 @@ public class LevelSelectMenu extends Table
 
     private ArrayList<LevelButton> buttons;
 
-    public LevelSelectMenu()
+    private GameScreenManager gsm;
+
+    public LevelSelectMenu(GameScreenManager gsm)
     {
+        this.gsm = gsm;
         setFillParent(true);
         center();
 
@@ -136,13 +140,13 @@ public class LevelSelectMenu extends Table
 
         for(int i = 0; i<LevelManager.maxLevel-1; i++)
         {
-            buttons.add(new LevelButton(i+1+"", paneSkin));
+            buttons.add(new LevelButton(i+1+"", paneSkin, gsm));
         }
 
         btnTable.clear();
         btnTable.clearChildren();
 
-        if(buttons.size()<LevelManager.maxLevel){buttons.add(new LevelButton(LevelManager.maxLevel+"", paneSkin));}
+        if(buttons.size()<LevelManager.maxLevel){buttons.add(new LevelButton(LevelManager.maxLevel+"", paneSkin, gsm));}
         for(int i = 1; i <= LevelManager.maxLevel; i++)
         {
             btnTable.add(buttons.get(i-1)).fill().expand().size(30, 30).top().center();

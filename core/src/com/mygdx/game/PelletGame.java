@@ -30,7 +30,7 @@ public class PelletGame extends Game
     public static final int HEIGHT = 1280;
     public static final float PPM = 3.5f;
 
-    public static GameScreenManager gsm;
+    public GameScreenManager gsm;
 
     public static Texture backgroundTex;
     public static Sprite backgroundSprite;
@@ -59,7 +59,7 @@ public class PelletGame extends Game
         gsm.setCurrentscreen("playscreen");
         setTheScreen(gsm.getScreen());
 
-        new LevelSelectMenu();
+        new LevelSelectMenu(gsm);
 
 
         Gdx.input.setCatchBackKey(true);

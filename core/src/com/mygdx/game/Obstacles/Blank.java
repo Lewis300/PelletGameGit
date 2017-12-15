@@ -20,6 +20,7 @@ public class Blank extends Obstacle
 
     public Blank()
     {
+        super(null);
         SCALE = PlayScreen.scale;
         //setBounds(getX(), getY(), 128/PlayScreen.PPM/SCALE, 128/PlayScreen.PPM/SCALE);
     }

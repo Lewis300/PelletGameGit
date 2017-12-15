@@ -122,8 +122,8 @@ public class Pellet_End extends PelletHole
     {
         Sprite sprite = new Sprite(texture);
         sprite.getTexture().setFilter(TextureFilter.Linear, TextureFilter.Linear);
-        sprite.setSize(sprite.getWidth() / PlayScreen.PPM/SCALE,
-        sprite.getHeight() / PlayScreen.PPM/SCALE);
+        sprite.setSize(sprite.getWidth()/10 / PlayScreen.PPM/SCALE,
+        sprite.getHeight()/10 / PlayScreen.PPM/SCALE);
         return sprite;
     }
 

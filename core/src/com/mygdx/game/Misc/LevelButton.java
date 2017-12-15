@@ -1,20 +1,20 @@
 package com.mygdx.game.Misc;
 
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.mygdx.game.Levels.LevelManager;
-import com.mygdx.game.PelletGame;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.GameScreenManager;
 
 /**
  * Created by Lewis on 11/17/2017.
  */
 public class LevelButton extends TextButton
 {
-    public LevelButton(String text, Skin skin)
+    private GameScreenManager gsm;
+    public LevelButton(String text, Skin skin, GameScreenManager gsm)
     {
         super(text, skin);
+        this.gsm = gsm;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class LevelButton extends TextButton
             PlayScreen.drawLevelText = false;
             PlayScreen.transitionTime = 2.75f;
 
-            PelletGame.gsm.getScreen().closeLvlSelectMenu();
+            gsm.getScreen().closeLvlSelectMenu();
         }
         super.act(delta);
     }

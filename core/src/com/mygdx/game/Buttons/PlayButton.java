@@ -85,7 +85,7 @@ public class PlayButton extends Actor
         if(touchedUp && buttonRect.contains(touchedDownCoords) && buttonRect.contains(touchedUpCoords))
         {
             //button.set(createScaledSprite(buttonUnpressed));
-            MenuScreen.fadingOut = true;
+
             touchedUp = false;
             getStage().addAction(Actions.sequence(Actions.alpha(1f), Actions.fadeOut(1f)));
 

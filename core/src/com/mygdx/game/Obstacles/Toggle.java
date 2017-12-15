@@ -55,6 +55,7 @@ public class Toggle extends Obstacle
 
     public Toggle(int id, int linkedId, boolean isOn, boolean isButton)
     {
+        super(null);
         makeId(id);
         this.linkedId = linkedId;
         this.isOn = isOn;
@@ -77,6 +78,7 @@ public class Toggle extends Obstacle
 
     public Toggle(int id, boolean isOn, boolean isButton)
     {
+        super(null);
         makeId(id);
         this.isOn = isOn;
         this.SCALE = PlayScreen.scale;

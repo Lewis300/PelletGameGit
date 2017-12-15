@@ -22,8 +22,8 @@ public class GameScreenManager
 
     public void setCurrentscreen(String screen)
     {
-        if(screen.equals("playscreen")){currentscreen = new PlayScreen(game);}
-        if(screen.equals("menuscreen")){currentscreen = new MenuScreen(game);}
+        if(screen.equals("playscreen")){currentscreen = new PlayScreen(this, game);}
+        if(screen.equals("menuscreen")){currentscreen = new MenuScreen(this, game);}
         //if(screen.equals("lighttest")){currentscreen = new LightTest(game);}
     }
 

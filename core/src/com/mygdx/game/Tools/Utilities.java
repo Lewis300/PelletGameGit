@@ -40,7 +40,7 @@ public class Utilities
     private static boolean shootSimultaneously = false;
     private static boolean waitBetweenFires = false;
 
-    public static Level createLevel(String filename)
+    public static Level createLevel(String filename, GameScreenManager gsm)
     {
         map = mapLoader.load(filename);
 
@@ -115,11 +115,11 @@ public class Utilities
                     //Check if it just has an id
                     if(props.containsKey("id"))
                     {
-                        obs.add(new Mirror(Integer.parseInt(props.get("id").toString()), rot)
+                        obs.add(new Mirror(gsm, Integer.parseInt(props.get("id").toString()), rot)
                         .setMapPos(objX, mapHeight-objY-1));
                     }
                     //Otherwise just make a regular mirror
-                    else{obs.add(new Mirror(rot).setMapPos(objX, mapHeight-objY-1));}
+                    else{obs.add(new Mirror(gsm, rot).setMapPos(objX, mapHeight-objY-1));}
 
                     //Check if mirror is linked to a toggle
                     if(props.containsKey("toggleid"))
@@ -211,10 +211,10 @@ public class Utilities
                     //Check if the block has an id
                     if(props.containsKey("id"))
                     {
-                        obs.add(new Block(Integer.parseInt(props.get("id").toString())).setMapPos(objX, mapHeight-objY-1));
+                        obs.add(new Block(gsm, Integer.parseInt(props.get("id").toString())).setMapPos(objX, mapHeight-objY-1));
                     }
                     //Otherwise create a regular block
-                    else{obs.add(new Block().setMapPos(objX, mapHeight-objY-1));}
+                    else{obs.add(new Block(gsm).setMapPos(objX, mapHeight-objY-1));}
 
                     //Check if the block is linked to a toggle
                     if(props.containsKey("toggleid"))
@@ -287,7 +287,7 @@ public class Utilities
 
                     if(props.containsKey("toggleid"))
                     {
-                        obs.add(new TrackPoint(Integer.parseInt(props.get("id", String.class)),
+                        obs.add(new TrackPoint(gsm, Integer.parseInt(props.get("id", String.class)),
                                 Integer.parseInt(props.get("groupnum", String.class)),
                                 Integer.parseInt(props.get("toggleid", String.class)),
                                 props.get("startingaction", String.class))
@@ -295,7 +295,7 @@ public class Utilities
                     }
                     else
                     {
-                        obs.add(new TrackPoint(Integer.parseInt(props.get("id", String.class)),
+                        obs.add(new TrackPoint(gsm, Integer.parseInt(props.get("id", String.class)),
                                 Integer.parseInt(props.get("groupnum", String.class)))
                                 .setMapPos(objX, mapHeight - objY - 1));
                     }
@@ -337,5 +337,22 @@ public class Utilities
             }
         }
         return 1;
+    }
+
+    private static Color[] randomColors = new Color[4];
+    public static Color[] generateRandomBackgroundColors()
+    {
+        for(int i = 0; i < randomColors.length; i++)
+        {
+             randomColors[i] = new Color((float)Math.random(), (float)Math.random(), (float)Math.random(), 1);
+        }
+        return randomColors;
+//        if(randomColor == null)
+//        {
+//            randomColor = new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256), (float)Math.random());
+//            return randomColor;
+//        }
+//        randomColor.set((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256), (float)Math.random());
+//        return randomColor;
     }
 }

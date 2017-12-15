@@ -1,5 +1,6 @@
 package com.mygdx.game.Levels;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -13,6 +14,7 @@ import com.mygdx.game.PelletGame;
 import com.mygdx.game.PelletStuff.Pellet;
 import com.mygdx.game.Screens.GameScreen;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.SpawnHandler;
 import com.mygdx.game.Tools.Utilities;
 import com.mygdx.game.Tools.WorldContactListener;
@@ -38,8 +40,10 @@ public class LevelManager
     private static Level currentLevel = null;
     public static boolean isBeingUsedByLevelTester = false;
 
-    public LevelManager()
+    private GameScreenManager gsm;
+    public LevelManager(GameScreenManager gsm)
     {
+        this.gsm = gsm;
         if(!isBeingUsedByLevelTester)levelnum = levelToStartAt-1;
         else{levelnum = lvlSequence.get(0);}
         //scale = Level4.getScale();
@@ -50,10 +54,10 @@ public class LevelManager
         Obstacle.nextId = 0;
         PlayScreen.rayHandler.removeAll();
 
-        if (levelnum == 0){currentLevel = Utilities.createLevel("TiledMaps/level1.tmx"); scale = currentLevel.getScale();}
+        if (levelnum == 0){currentLevel = Utilities.createLevel("TiledMaps/level1.tmx", gsm); scale = currentLevel.getScale();}
         else
         {
-            currentLevel = Utilities.createLevel("TiledMaps/level"+levelnum+".tmx");
+            currentLevel = Utilities.createLevel("TiledMaps/level"+levelnum+".tmx", gsm);
             scale = currentLevel.getScale();
         }
 
@@ -69,7 +73,7 @@ public class LevelManager
     }
 
     private int goneToNextLevelCount = 0;
-    public void goToNextLevel(World world, Stage gamestage, Table lvlTable, ArrayList<Pellet> pellets)
+    public void goToNextLevel(World world, Stage gamestage, Table lvlTable, ArrayList<Pellet> pellets, Color[] backGroundColors)
     {
 
         PlayScreen.pelletAlpha = 0;
@@ -126,6 +130,12 @@ public class LevelManager
         RayHandler.useDiffuseLight(false);
 
         updateMaxlevel();
+
+        Color[] colors = Utilities.generateRandomBackgroundColors();
+        backGroundColors[0] = colors[0];
+        backGroundColors[1] = colors[1];
+        backGroundColors[2] = colors[2];
+        backGroundColors[3] = colors[3];
 
         goneToNextLevelCount++;
 

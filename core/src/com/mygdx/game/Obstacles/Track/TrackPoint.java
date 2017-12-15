@@ -16,6 +16,7 @@ import com.mygdx.game.Obstacles.Toggle;
 import com.mygdx.game.PelletGame;
 import com.mygdx.game.PelletStuff.Pellet;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
 
 /**
@@ -46,8 +47,9 @@ public class TrackPoint extends Obstacle
     private Sprite pointSprite;
     private Sprite dotSprite;
 
-    public TrackPoint(int id, int trackNum)
+    public TrackPoint(GameScreenManager gsm, int id, int trackNum)
     {
+        super(gsm);
         makeId(id);
         this.trackNum = trackNum;
         SCALE = PlayScreen.scale;
@@ -75,8 +77,9 @@ public class TrackPoint extends Obstacle
 
     }
 
-    public TrackPoint(int id, int trackNum, int toggleId, String action)
+    public TrackPoint(GameScreenManager gsm, int id, int trackNum, int toggleId, String action)
     {
+        super(gsm);
         makeId(id);
         setToggleId(toggleId);
         this.trackNum = trackNum;
@@ -101,10 +104,8 @@ public class TrackPoint extends Obstacle
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button)
             {
-                if(!PelletGame.gsm.getScreen().isInLvlMenu())
-                {
-                    if(allowTouch)touched = true;
-                }
+                if(allowTouch)touched = true;
+
                 return super.touchDown(event, x, y, pointer, button);
             }
         });

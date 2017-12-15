@@ -16,10 +16,10 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.mygdx.game.PelletGame;
 import com.mygdx.game.PelletStuff.Pellet;
+import com.mygdx.game.Screens.GameScreen;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
-
-import box2dLight.PointLight;
 
 /**
  * Created by Lewis on 8/5/2017.
@@ -57,9 +57,9 @@ public class Mirror extends Obstacle
     private PolygonShape shape;
     private Polygon poly;
 
-
-    public Mirror(float rotation)
+    public Mirror(GameScreenManager gsm, float rotation)
     {
+        super(gsm);
         int plusr = 0;
         if(PlayScreen.levelsPassedSinceOpen >= 1)
         {
@@ -71,8 +71,9 @@ public class Mirror extends Obstacle
         calculateTriangle(mirror.getX(), mirror.getY(), mirror.getRotation());
     }
 
-    public Mirror(int id, float rotation)
+    public Mirror(GameScreenManager gsm, int id, float rotation)
     {
+        super(gsm);
         int plusr = 0;
         if(PlayScreen.levelsPassedSinceOpen >= 1)
         {
@@ -98,6 +99,7 @@ public class Mirror extends Obstacle
     
     private void create(float rotation)
     {
+
         if(rotation == 360 || rotation == 0 || rotation == -360)rotation = 180;
         else if(rotation == 90 || rotation == -270)rotation = 270;
         else if(rotation == 180 || rotation == -180)rotation = 0;
@@ -136,7 +138,7 @@ public class Mirror extends Obstacle
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button)
             {
-                if(!PelletGame.gsm.getScreen().isInLvlMenu())
+                if(!gsm.getScreen().isInLvlMenu())
                 {
                     if (hit == -1) {
                         hit = 1;

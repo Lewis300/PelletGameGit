@@ -23,8 +23,9 @@ public class SelectLevelMenuButton extends Actor
 
     public SelectLevelMenuButton()
     {
-       btn = createScaledSprite(Reusables.selectLevelMenuButtonTexture);
-
+        btn = createScaledSprite(Reusables.selectLevelMenuButtonTexture);
+        setWidth(btn.getWidth());
+        setHeight(btn.getHeight());
         addListener(new InputListener(){
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button)

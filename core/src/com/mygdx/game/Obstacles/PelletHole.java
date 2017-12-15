@@ -8,7 +8,7 @@ public abstract class PelletHole extends Obstacle
 {
     public PelletHole()
     {
-        super();
+        super(null);
     }
 
     public abstract float getFillPelletRadius();

@@ -14,6 +14,7 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.mygdx.game.Obstacles.Track.TrackPoint;
 import com.mygdx.game.PelletStuff.Pellet;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
 
 import static com.badlogic.gdx.graphics.g2d.ParticleEmitter.SpawnShape.point;
@@ -62,8 +63,11 @@ public abstract class Obstacle extends Actor
 
     public float centerX = 0, centerY = 0;
 
-    public Obstacle()
+    public GameScreenManager gsm;
+
+    public Obstacle(GameScreenManager gsm)
     {
+        if(gsm != null){this.gsm = gsm;}
         if(id == -1)
         {
             id = nextId + 1;
