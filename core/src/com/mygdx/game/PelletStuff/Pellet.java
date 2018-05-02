@@ -107,7 +107,8 @@ public class Pellet implements Pool.Poolable
         //Check if the pellet is allowed to interact with other Obstacles
         lifeTime+=dt;
         if(justInteracted){interactTime+=dt;}
-        if(interactTime>=42.5/speed/ PlayScreen.PPM){justInteracted = false; interactTime = 0;}
+        //42.5/speed/ PlayScreen.PPM
+        if(interactTime>=0){justInteracted = false; interactTime = 0;}
 
         if(y - pellet.getHeight()*5 > PlayScreen.gameport.getWorldHeight()*1.5 || y<-PlayScreen.gameport.getWorldHeight()*1.5-pellet.getHeight()*5 || x - pellet.getWidth()*20 > PlayScreen.gameport.getWorldWidth()*1.5 || x<-PlayScreen.gameport.getWorldWidth()*1.5-pellet.getWidth()*5){remove = true; removeLight = true;}
 
@@ -140,7 +141,6 @@ public class Pellet implements Pool.Poolable
             if(pelletLight.getDistance() >= lightSize){pelletLight.setDistance(lightSize);}
         }
     }
-
     //Method that creates and defines a Box2D body
     public void defineBody()
     {

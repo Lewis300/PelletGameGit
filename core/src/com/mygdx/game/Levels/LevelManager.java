@@ -31,15 +31,14 @@ import box2dLight.RayHandler;
 public class LevelManager
 {
     public static int levelnum;
-    public static int maxLevel = 12;//PelletGame.prefs.getInteger("maxLevel", 1);
-    public static int levelToStartAt = 12;
+    public static int maxLevel = 16;//PelletGame.prefs.getInteger("maxLevel", 1);
+    public static int levelToStartAt = 5;
     private float scale = 1f;
 
     public static ArrayList<Integer> lvlSequence;
 
     private static Level currentLevel = null;
     public static boolean isBeingUsedByLevelTester = false;
-
     private GameScreenManager gsm;
     public LevelManager(GameScreenManager gsm)
     {
@@ -117,7 +116,6 @@ public class LevelManager
         lvlTable.add(PlayScreen.menuButton).size(PlayScreen.gameport.getWorldWidth()/btnDiv, PlayScreen.gameport.getWorldWidth()/btnDiv).left();
         lvlTable.row();
         currentLevel.loadToTable(lvlTable);
-        //lvlTable.add().size(PlayScreen.gameport.getWorldWidth()/btnDiv, PlayScreen.gameport.getWorldWidth()/btnDiv).right();
         lvlTable.center();
 
         gamestage.addActor(lvlTable);

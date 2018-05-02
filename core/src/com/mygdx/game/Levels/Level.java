@@ -252,8 +252,8 @@ public class Level
 
     public void createEdgeBox(Viewport port, World world)
     {
-        int wdiv = 115;
-        int hdiv = 204;
+        int wdiv = 50;
+        int hdiv = 100;
 
         box = new Body[4];
 

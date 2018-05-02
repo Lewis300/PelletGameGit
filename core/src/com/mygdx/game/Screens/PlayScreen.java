@@ -259,7 +259,6 @@ public class PlayScreen extends GameScreen
     public void render(float delta)
     {
         super.render(delta);
-
         update(dt);
         menuButton.act(delta);
 
@@ -274,7 +273,7 @@ public class PlayScreen extends GameScreen
 
         game.batch.setColor(1, 1, 1, 1);
         game.batch.begin();
-        //game.batch.draw(PelletGame.backgroundTex, 0,0, gameport.getScreenWidth(), gameport.getScreenHeight());
+        //game.batch.draw(PelletGame.backgroundTex, 0,0, gameport.getWorldWidth(), gameport.getWorldHeight());
 
         //System.out.println(dt);
 

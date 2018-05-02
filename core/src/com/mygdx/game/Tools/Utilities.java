@@ -340,19 +340,14 @@ public class Utilities
     }
 
     private static Color[] randomColors = new Color[4];
+
     public static Color[] generateRandomBackgroundColors()
     {
         for(int i = 0; i < randomColors.length; i++)
         {
-             randomColors[i] = new Color((float)Math.random(), (float)Math.random(), (float)Math.random(), 1);
+            if(randomColors[i] != null){randomColors[i].set((float) Math.random()*0.8f, (float) Math.random()*0.8f, (float) Math.random()*0.8f, 1);}
+            else{randomColors[i] = new Color((float) Math.random()*0.8f, (float) Math.random()*0.8f, (float) Math.random()*0.8f, 1);}
         }
         return randomColors;
-//        if(randomColor == null)
-//        {
-//            randomColor = new Color((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256), (float)Math.random());
-//            return randomColor;
-//        }
-//        randomColor.set((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256), (float)Math.random());
-//        return randomColor;
     }
 }

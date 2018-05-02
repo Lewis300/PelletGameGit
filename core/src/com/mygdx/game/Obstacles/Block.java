@@ -96,10 +96,10 @@ public class Block extends Obstacle
 
         //Set points for Box2D rectangle
         float[] points = new float[8];
-        points[0] = block.getX()+10f/PlayScreen.PPM/SCALE; points[1] = block.getY()+118f/PlayScreen.PPM/SCALE;
-        points[2] = block.getX()+118f/PlayScreen.PPM/SCALE; points[3] = block.getY()+118f/PlayScreen.PPM/SCALE;
-        points[4] = block.getX()+118f/PlayScreen.PPM/SCALE; points[5] = block.getY()+10f/PlayScreen.PPM/SCALE;
-        points[6] = block.getX()+10f/PlayScreen.PPM/SCALE; points[7] = block.getY()+10f/PlayScreen.PPM/SCALE;
+        points[0] = block.getX()+10f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f; points[1] = block.getY()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f;
+        points[2] = block.getX()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f; points[3] = block.getY()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f;
+        points[4] = block.getX()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f; points[5] = block.getY()+10f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f;
+        points[6] = block.getX()+10f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f; points[7] = block.getY()+10f/PlayScreen.PPM/SCALE + Pellet.getWidth()/1.8f;
 
         //Create Box2D rectangle
         rect = new PolygonShape();
@@ -228,10 +228,10 @@ public class Block extends Obstacle
 
         //Calculate location of Box2D rectangle and update the body
         float[] points = new float[8];
-        points[0] = block.getX()+10f/PlayScreen.PPM/SCALE; points[1] = block.getY()+118f/PlayScreen.PPM/SCALE;
-        points[2] = block.getX()+118f/PlayScreen.PPM/SCALE; points[3] = block.getY()+118f/PlayScreen.PPM/SCALE;
-        points[4] = block.getX()+118f/PlayScreen.PPM/SCALE; points[5] = block.getY()+10f/PlayScreen.PPM/SCALE;
-        points[6] = block.getX()+10f/PlayScreen.PPM/SCALE; points[7] = block.getY()+10f/PlayScreen.PPM/SCALE;
+        points[0] = block.getX()+10f/PlayScreen.PPM/SCALE - Pellet.getWidth()/2f; points[1] = block.getY()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/2f;
+        points[2] = block.getX()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/2f; points[3] = block.getY()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/2f;
+        points[4] = block.getX()+118f/PlayScreen.PPM/SCALE + Pellet.getWidth()/2f; points[5] = block.getY()+10f/PlayScreen.PPM/SCALE - Pellet.getWidth()/2f;
+        points[6] = block.getX()+10f/PlayScreen.PPM/SCALE - Pellet.getWidth()/2f; points[7] = block.getY()+10f/PlayScreen.PPM/SCALE - Pellet.getWidth()/2f;
 
         rect.set(points);
         defineBody();
