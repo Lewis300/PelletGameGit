@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="28">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYKANYKGRucMRMA60A4YZYMYhzkRXV4yCUUAYsNLQbAAxCAAQ
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2.5"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="19" gid="2" x="896" y="1664" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="25" gid="4" x="896" y="256" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="27" gid="3" x="128" y="1664" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="r"/>
+    <property name="initialdelay" type="float" value="3"/>
+    <property name="pelletpause" type="float" value="2.5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks">
+  <object id="20" gid="1" x="896" y="896" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-1"/>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-2"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="toggles">
+  <object id="21" gid="5" x="896" y="3072" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-2"/>
+    <property name="isbutton" type="bool" value="true"/>
+    <property name="linkedid" type="int" value="-1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="wallportals"/>
+</map>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="36">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="28" gid="2" x="128" y="1536" width="128" height="128">
+   <properties>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="29" gid="2" x="128" y="2560" width="128" height="128"/>
+  <object id="30" gid="2" x="896" y="2560" width="128" height="128"/>
+  <object id="31" gid="2" x="1664" y="2560" width="128" height="128"/>
+  <object id="32" gid="2" x="1664" y="1536" width="128" height="128">
+   <properties>
+    <property name="startingaction" value="disable"/>
+    <property name="toggleid" type="int" value="-1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="34" gid="4" x="1664" y="256" width="128" height="128"/>
+  <object id="35" gid="4" x="128" y="256" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="33" gid="3" x="896" y="3072" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="u"/>
+    <property name="initialdelay" type="float" value="3"/>
+    <property name="pelletpause" type="float" value="3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks"/>
+ <objectgroup name="toggles">
+  <object id="27" gid="5" x="896" y="1536" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-1"/>
+    <property name="isbutton" type="bool" value="false"/>
+    <property name="startson" type="bool" value="false"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="wallportals"/>
+</map>
