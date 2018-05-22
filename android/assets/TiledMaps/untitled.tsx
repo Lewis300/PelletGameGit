@@ -25,7 +25,7 @@
   <image width="128" height="128" source="../Obstacles/start.png"/>
  </tile>
  <tile id="3" type="pelletend">
-  <image width="128" height="128" source="../Obstacles/end.png"/>
+  <image width="128" height="128" source="../Obstacles/endSmall.png"/>
  </tile>
  <tile id="4" type="toggle">
   <properties>
