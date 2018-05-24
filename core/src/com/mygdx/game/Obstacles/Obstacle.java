@@ -101,10 +101,10 @@ public abstract class Obstacle extends Actor
         float X;
         float Y;
 
-        {
-            X = getX();
-            Y = getY();
-        }
+
+        X = getX();
+        Y = getY();
+
 
         point.setTouchable(Touchable.disabled);
         justMoved = true;
@@ -117,11 +117,8 @@ public abstract class Obstacle extends Actor
         rise = (endy - Y);
         run = (endx - X);
 
-
-
         slope = rise/run;
         yintercept = Y - (slope*X);
-
 
         degreesAdd = 0;
         initialRotation90 = Math.round(getSprite().getRotation()/90)*90;

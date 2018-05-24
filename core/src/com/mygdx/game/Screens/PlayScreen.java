@@ -95,7 +95,7 @@ public class PlayScreen extends GameScreen
     public static Button menuButton;
     private static Skin menuButtonSkin;
 
-    private static int pelletSpeedMult = 1;
+    private static int pelletSpeedMult = 1; //Pellet Speed multiplier
 
     private ShapeRenderer sr;
     private Color[] backGroundColors;
@@ -212,7 +212,7 @@ public class PlayScreen extends GameScreen
             pellets.get(i).id = i + "";
         }
 
-        //Check for and remove pellets that ought to be removed
+        //Check for and remove pellets that shouldnt exist anymore
         ArrayList<Pellet> pelletsToRemove= new ArrayList<Pellet>();
         for(Pellet pellet : pellets)
         {
@@ -231,8 +231,11 @@ public class PlayScreen extends GameScreen
         }
         pellets.removeAll(pelletsToRemove);
 
+        //Check if level is changing and perform necesarry tasks
         if(!levelIsChanging){PelletGame.font440.getData().setScale(0.2857142857142857f);}
         if(levelIsChanging || enteringFromMenu){calculateFadeAlpha(dt);}
+
+        //Check if the final Pellet_End object of the level has been filled by a pellet
         if(Pellet_End.finalEndSelected != -1123451){levelIsChanging = true; drawLevelText = true;}
 
         for(int i = 0; i<pelletSpeedMult; i++)world.step(dt, 6, 2);

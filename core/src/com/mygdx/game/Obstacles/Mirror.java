@@ -481,13 +481,14 @@ public class Mirror extends Obstacle
     @Override
     public void actToggle()
     {
-        if (toggleAction.equals("disable") && mirror.getColor().a < Toggle.fadealpha+0.01f)
+
+        if (mirror.getColor().a < Toggle.fadealpha+0.01f)
         {
             fadeIn = true;
             fadeOut = false;
             //defineBody();
         }
-        else if (toggleAction.equals("disable") && mirror.getColor().a >=0.99f)
+        else if (mirror.getColor().a >=0.99f)
         {
             fadeOut = true;
             fadeIn = false;
