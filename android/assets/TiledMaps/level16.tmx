@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="right-down" width="15" height="24" tilewidth="128" tileheight="128" nextobjectid="70">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh8gIXG5rPS2Hx6AkYi1DCRqH6oAyYcbFLVDHXAiIM9XP2LK18PxTTPDqUBYcAAJw==
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="24">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBgBAAWgAAE=
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="52" gid="2" x="128" y="1664" width="128" height="128"/>
+  <object id="53" gid="2" x="128" y="1152" width="128" height="128"/>
+  <object id="54" gid="2" x="512" y="1664" width="128" height="128"/>
+  <object id="55" gid="2" x="1280" y="1664" width="128" height="128"/>
+  <object id="56" gid="2" x="1664" y="1664" width="128" height="128"/>
+  <object id="57" gid="2" x="1664" y="2176" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="48" gid="4" x="896" y="384" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="47" gid="3" x="896" y="1664" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="udlr"/>
+    <property name="initialdelay" type="float" value="3"/>
+    <property name="pelletpause" type="float" value="1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints"/>
+ <objectgroup name="blocks">
+  <object id="58" gid="1" x="1280" y="2176" width="128" height="128"/>
+  <object id="59" gid="1" x="896" y="2176" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-3"/>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-4"/>
+   </properties>
+  </object>
+  <object id="60" gid="1" x="1664" y="2688" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-1"/>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-2"/>
+   </properties>
+  </object>
+  <object id="61" gid="1" x="896" y="1024" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-5"/>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-6"/>
+   </properties>
+  </object>
+  <object id="62" gid="1" x="512" y="1152" width="128" height="128"/>
+  <object id="65" gid="1" x="1664" y="896" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="toggles">
+  <object id="50" gid="5" x="896" y="2688" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-6"/>
+    <property name="isbutton" type="bool" value="true"/>
+    <property name="linkedid" type="int" value="-5"/>
+   </properties>
+  </object>
+  <object id="51" gid="5" x="128" y="640" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-2"/>
+    <property name="isbutton" type="bool" value="true"/>
+    <property name="linkedid" type="int" value="-1"/>
+   </properties>
+  </object>
+  <object id="66" gid="5" x="1664" y="640" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-4"/>
+    <property name="isbutton" type="bool" value="true"/>
+    <property name="linkedid" type="int" value="-3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="wallportals">
+  <object id="67" gid="7" x="1664" y="128" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-11"/>
+    <property name="linkedid" type="int" value="-10"/>
+    <property name="side" value="t"/>
+   </properties>
+  </object>
+  <object id="68" gid="7" x="1664" y="3072" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-10"/>
+    <property name="linkedid" type="int" value="-11"/>
+    <property name="side" value="b"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
