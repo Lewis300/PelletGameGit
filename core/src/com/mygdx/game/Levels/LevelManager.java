@@ -31,8 +31,8 @@ import box2dLight.RayHandler;
 public class LevelManager
 {
     public static int levelnum;
-    public static int maxLevel = 16;//PelletGame.prefs.getInteger("maxLevel", 1);
-    public static int levelToStartAt = 5;
+    public static int maxLevel = 17;//PelletGame.prefs.getInteger("maxLevel", 1);
+    public static int levelToStartAt = 17;
     private float scale = 1f;
 
     public static ArrayList<Integer> lvlSequence;
