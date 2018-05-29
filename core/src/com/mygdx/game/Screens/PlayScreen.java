@@ -36,11 +36,6 @@ import com.mygdx.game.Tools.WorldContactListener;
 import java.util.ArrayList;
 import box2dLight.RayHandler;
 
-/**
- * Created by Lewis on 8/23/2017.
- */
-
-//TODO MAKE A LEVEL MARKER
 
 public class PlayScreen extends GameScreen
 {
@@ -179,10 +174,11 @@ public class PlayScreen extends GameScreen
     }
 
     private boolean hasSentObstaclesToPoints = false;
-    public void update(float dt)
+    private void update(float dt)
     {
         handleInput(dt);
 
+        //Animate the pop up of the level menu
         if(menuButton.isPressed() && !isInLvlMenu() && !levelIsChanging && timePassed>=0.5f)
         {
             openLvlSelectMenu();
@@ -419,6 +415,8 @@ public class PlayScreen extends GameScreen
     }
 
     public static float transitionTime = 5.5f;
+
+    //Calculates the alpha value of the color when levels are changing (seethorugh-ness)
     private void calculateFadeAlpha(float dt)
     {
         fadeTime+=dt;
@@ -467,6 +465,8 @@ public class PlayScreen extends GameScreen
     }
 
     private float bouncetime = 0;
+
+
     private void calculateTextBounce(BitmapFont font, float dt)
     {
         if(bouncetime<=0.1)lvlChangeText = lmg.getLevelNum() + "";
