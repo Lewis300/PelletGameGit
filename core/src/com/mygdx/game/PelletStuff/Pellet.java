@@ -182,6 +182,8 @@ public class Pellet implements Pool.Poolable
         return circBody;
     }
 
+    //This method would be used in the case the pellet object are recycled
+    //This version of the project instead destroys the pellet object and makes a new one
     @Override
     public void reset()
     {
