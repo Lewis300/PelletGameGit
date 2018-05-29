@@ -466,7 +466,7 @@ public class PlayScreen extends GameScreen
 
     private float bouncetime = 0;
 
-
+    //calculates the proper size of the level text for the current frame, based on how much time has passed
     private void calculateTextBounce(BitmapFont font, float dt)
     {
         if(bouncetime<=0.1)lvlChangeText = lmg.getLevelNum() + "";
