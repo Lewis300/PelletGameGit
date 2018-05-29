@@ -198,6 +198,7 @@ public class Mirror extends Obstacle
 
     }
 
+    //Draws the current frame of this obstacle
     @Override
     public void draw(Batch batch, float parentAlpha)
     {
@@ -206,6 +207,7 @@ public class Mirror extends Obstacle
 
     private int actCount = 0;
 
+    //Carries out necessarry actions between frames
     @Override
     public void act(float delta)
     {
@@ -263,7 +265,8 @@ public class Mirror extends Obstacle
             }
 
         }
-        
+
+        //Handles fading in/out of obstacle when triggered by a Toggle object
         if(fadeIn || fadeOut)
         {
             if(fadeIn)
@@ -357,6 +360,7 @@ public class Mirror extends Obstacle
         B2body.createFixture(fdef).setUserData(getUserData());
     }
 
+    //Sends colliding pellet in proper direction
     @Override
     public void handleCollision(Pellet pellet)
     {
@@ -495,6 +499,7 @@ public class Mirror extends Obstacle
         }
     }
 
+    //Box2D data, used by the WorldContactListener class do identify this specific object when it is collided with
     @Override
     public String getUserData()
     {

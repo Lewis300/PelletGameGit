@@ -63,6 +63,7 @@ public class TrackPoint extends Obstacle
 
         setTouchable(Touchable.enabled);
 
+        //Allows object to be clicked by the user
         addListener(new InputListener()
         {
             @Override
@@ -76,6 +77,7 @@ public class TrackPoint extends Obstacle
 
 
     }
+
 
     public TrackPoint(GameScreenManager gsm, int id, int trackNum, int toggleId, String action)
     {
@@ -117,6 +119,7 @@ public class TrackPoint extends Obstacle
     private float closeTime = 0;
     public float openTime = 0;
 
+    //draws the frame
     @Override
     public void draw(Batch batch, float parentAlpha)
     {
@@ -136,6 +139,7 @@ public class TrackPoint extends Obstacle
 
     private int initialized = 0;
 
+    //Carries out actions necesarry between each frame
     @Override
     public void act(float delta)
     {
@@ -171,6 +175,7 @@ public class TrackPoint extends Obstacle
             //else{setBounds(getX(), getY(), pointSprite.getWidth()*2, pointSprite.getHeight()*2);}
         }
 
+        //Animates the fading in/out of this trackpoint when triggered by a Toggle object
         if(fadeIn || fadeOut)
         {
             if(fadeIn)
@@ -345,6 +350,8 @@ public class TrackPoint extends Obstacle
     private Color defaultColor;
 
     private Vector2 origin = new Vector2();
+
+    //Animates the trackpoints closing
     private void animateClose(float dt, float timePassed, Sprite pSprite, Sprite dSprite, Batch batch)
     {
         float totalTime = Obstacle.pointMoveTime;
@@ -375,6 +382,7 @@ public class TrackPoint extends Obstacle
         }
     }
 
+    //Animates the trackpoints opening
     private void animateOpen(float dt, float timePassed, Sprite pSprite, Sprite dSprite, Batch batch)
     {
         float totalTime = Obstacle.pointMoveTime;

@@ -80,6 +80,7 @@ public abstract class Obstacle extends Actor
 
     private int givenId = 0;
     private boolean  isId = false;
+
     public void makeId(int id)
     {
         isId = true;
@@ -337,6 +338,8 @@ public abstract class Obstacle extends Actor
     private float boxTime = 0f;
     private float shrinkDistance = 0f;
     private boolean drawBox = true;
+
+    //Draws a box around the object, makes all pellets bounce 180 degress away on collision
     public void drawBoudingBox(float delta, Batch batch, float x, float y, float width, float height, boolean drawIn)
     {
         boxTime+=delta;

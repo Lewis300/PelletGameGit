@@ -19,9 +19,6 @@ import com.mygdx.game.Tools.Reusables;
 import box2dLight.PointLight;
 
 
-/**
- * Created by Lewis on 8/12/2017.
- */
 
 public class Pellet_End extends PelletHole
 {

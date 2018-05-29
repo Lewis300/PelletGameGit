@@ -286,12 +286,13 @@ public class PlayScreen extends GameScreen
         }
 
         game.batch.end();
-
+        //Draw all lights
         rayHandler.render();
+        //Render the levels objects
         gamestage.draw();
 
 
-
+        //Draw fonts
         if (levelIsChanging && fadeTime != 0.0f && fadeTime < 5.45f)
         {
             game.batch.begin();
@@ -318,6 +319,7 @@ public class PlayScreen extends GameScreen
             game.batch.end();
         }
 
+        //These commands can be used to draw hitboxes and table outlines
         //gameTable.debugAll();
         //lvlTable.debugAll();
         //gamestage.setDebugAll(true);

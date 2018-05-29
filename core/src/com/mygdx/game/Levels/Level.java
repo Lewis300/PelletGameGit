@@ -70,6 +70,7 @@ public class Level
         this.waitBetweenFires = waitBetweenFires;
     }
 
+    //Constructs the level in a 2D obstacle array
     public void createMap(int width, int height, Obstacle[] obstacles)
     {
         this.obstacles = obstacles;
@@ -84,6 +85,7 @@ public class Level
             }
         }
     }
+
 
     public void createMap(int width, int height, ArrayList<Obstacle> obs)
     {
@@ -112,6 +114,8 @@ public class Level
     public Obstacle[] getObstacles(){return obstacles;}
 
     private Pellet_Start[] starts = null;
+
+    //Returns an array of all pellet_start objects in the map
     public Pellet_Start[] getPelletStart()
     {
         if(starts == null)
@@ -146,6 +150,8 @@ public class Level
     }
 
     private Pellet_End[] ends = null;
+
+    //Returns an array of all the pellet_end objects in the map
     public Pellet_End[] getPelletEnd()
     {
         if(ends == null)
@@ -187,14 +193,8 @@ public class Level
     {
 
         sideLength = 128/PlayScreen.PPM/PlayScreen.scale;
-//        for(int i = 1; i<map[0].length+1; i++)
-//        {
-//            table.add();
-//        }
-//        table.add();
-//        table.row();
 
-        //table.setScaleX(2.0f);
+        //Load 'map' onto the passed Table object
         for(int i = 0; i < map.length; i++)
         {
             for(int j = 0; j < map[0].length; j++)
@@ -203,6 +203,7 @@ public class Level
                 {
                     table.add().expand().size(sideLength);
                 }
+                //Add menu button
                 else if(i == map.length-1 && j == map[0].length-1)
                 {
                     table.add(PlayScreen.menuButton).size(PlayScreen.gameport.getScreenWidth()/40, PlayScreen.gameport.getScreenWidth()/40);
@@ -216,9 +217,6 @@ public class Level
                     table.add(currentActor).center();
                     currentCell = table.getCell(currentActor);
 
-//                    float x = table.getCell(currentActor).getActorX() - (sidelength - table.getCell(currentActor).getActorWidth());
-//                    float y = table.getCell(currentActor).getActorY() + (sidelength - table.getCell(currentActor).getActorWidth());
-
                     table.getCell(currentActor).size(sideLength*1.3f).center();
                 }
             }
@@ -227,6 +225,7 @@ public class Level
             table.setFillParent(true);
         }
 
+        //Add level number to the bottom corner
         Actor levelMarker = new Actor()
         {
 
@@ -241,6 +240,7 @@ public class Level
 
     }
 
+    //Sends obstacles to trackpoints at the start of the level
     public void sendObstaclesToTrackPoints()
     {
         for(int i = 0; i<groups.size(); i++)
@@ -250,6 +250,7 @@ public class Level
         hasSentObstaclesToPoints = true;
     }
 
+    //Places a Box2D box around the edge of the map
     public void createEdgeBox(Viewport port, World world)
     {
         int wdiv = 50;
@@ -261,19 +262,20 @@ public class Level
         FixtureDef fdef[] = new FixtureDef[4];
         EdgeShape[] poly = new EdgeShape[4];
 
+        //Co-ordinateds of the corners of the box
         float[] points = new float[8];
         points[0] = port.getWorldWidth()/wdiv; points[1] = port.getWorldHeight()/hdiv;
         points[2] = port.getWorldWidth()/wdiv; points[3] = port.getWorldHeight() - port.getWorldHeight()/hdiv;
         points[4] = port.getWorldWidth() - port.getWorldWidth()/wdiv; points[5] = port.getWorldHeight() - port.getWorldHeight()/hdiv;
         points[6] = port.getWorldWidth() - port.getWorldWidth()/wdiv; points[7] = port.getWorldHeight()/hdiv;
 
+        //Create box out of individual lines
         for(int i = 0; i< poly.length*2; i+=2)
         {
             poly[i/2] = new EdgeShape();
             if(i<6)poly[i/2].set(new Vector2(points[i], points[i+1]), new Vector2(points[i+2], points[i+3]));
             else{poly[i/2].set(new Vector2(points[6], points[7]), new Vector2(points[0], points[2]));}
         }
-
         for(int i = 0; i< bdef.length; i++)
         {
             bdef[i] = new BodyDef();
@@ -288,9 +290,6 @@ public class Level
             fdef[i] = new FixtureDef();
             fdef[i].shape = poly[i];
         }
-
-
-
         for(int i = 0; i< bdef.length; i++){box[i].createFixture(fdef[i]).setUserData("edgebox");}
 
     }
@@ -301,6 +300,8 @@ public class Level
     }
 
     private WallPortal[] portals = null;
+
+    //Returns array of all WallPortal objects in the map
     public WallPortal[] getWallPortals()
     {
         if(portals == null)
@@ -330,6 +331,7 @@ public class Level
         groups.add(new TrackGroup(getTrackPoints()[groups.size()], obstacleId, color));
     }
 
+    //Returns 2d array of all trackpoints in the map, each array in this array is a separate group of trackpoints
     public TrackPoint[][] getTrackPoints()
     {
         ArrayList<ArrayList<TrackPoint>> arr = new ArrayList<ArrayList<TrackPoint>>();

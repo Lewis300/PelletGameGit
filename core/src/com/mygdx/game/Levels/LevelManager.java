@@ -24,22 +24,23 @@ import java.util.ArrayList;
 import box2dLight.RayHandler;
 
 
-/**
- * Created by Lewis on 8/24/2017.
- */
 
+//This Class Handles the loading and changing of levels when moving from one level to another
 public class LevelManager
 {
-    public static int levelnum;
-    public static int maxLevel = 17;//PelletGame.prefs.getInteger("maxLevel", 1);
-    public static int levelToStartAt = 17;
-    private float scale = 1f;
+
+    public static int levelnum; //What level the games is currently on
+
+    public static int maxLevel = 17;//Maximum level to be allowed on the menu (So that users can't skip levels)                     PelletGame.prefs.getInteger("maxLevel", 1);
+    public static int levelToStartAt = 1; //What level opens when the game is opened
+    private float scale = 1f; //Scale of the level, used for the spacing and sizing of obstacles
 
     public static ArrayList<Integer> lvlSequence;
 
     private static Level currentLevel = null;
     public static boolean isBeingUsedByLevelTester = false;
     private GameScreenManager gsm;
+
     public LevelManager(GameScreenManager gsm)
     {
         this.gsm = gsm;
@@ -53,6 +54,7 @@ public class LevelManager
         Obstacle.nextId = 0;
         PlayScreen.rayHandler.removeAll();
 
+        //Load appropriate level on launch
         if (levelnum == 0){currentLevel = Utilities.createLevel("TiledMaps/level1.tmx", gsm); scale = currentLevel.getScale();}
         else
         {
@@ -60,6 +62,7 @@ public class LevelManager
             scale = currentLevel.getScale();
         }
 
+        //Create an hitbox on the edges so that  light from wallportals do not extend into the level
         currentLevel.createEdgeBox(PlayScreen.gameport, PlayScreen.world);
 
     }
@@ -75,9 +78,11 @@ public class LevelManager
     public void goToNextLevel(World world, Stage gamestage, Table lvlTable, ArrayList<Pellet> pellets, Color[] backGroundColors)
     {
 
+        //Clear tables and reset values
         PlayScreen.pelletAlpha = 0;
         Obstacle.nextId = 0;
         PlayScreen.timePassed = 0;
+
 
         lvlTable.clear();
         gamestage.clear();
@@ -105,13 +110,15 @@ public class LevelManager
 
         this.create();
 
-
+        //Add level fade in animation
         setAmbientLight(currentLevel.getAmbientLight());
         gamestage.addAction(Actions.sequence(Actions.alpha(0f), Actions.delay(0.2f), Actions.fadeIn(2f), Actions.show()));
 
+        //Position the level on the screen
         float padDiv = 40f;
         lvlTable.pad(PlayScreen.gameport.getWorldHeight()/padDiv, PlayScreen.gameport.getWorldWidth()/padDiv, PlayScreen.gameport.getWorldHeight()/padDiv, PlayScreen.gameport.getWorldWidth()/padDiv);
 
+        //Posotion the menu button on the screen
         float btnDiv = 16f;
         lvlTable.add(PlayScreen.menuButton).size(PlayScreen.gameport.getWorldWidth()/btnDiv, PlayScreen.gameport.getWorldWidth()/btnDiv).left();
         lvlTable.row();
@@ -139,7 +146,7 @@ public class LevelManager
 
     }
 
-    public void changeLevel()
+    private void changeLevel()
     {
         if(isBeingUsedByLevelTester)
         {

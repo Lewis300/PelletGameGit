@@ -65,9 +65,11 @@ public class LevelSelectMenu extends Table
         setFillParent(true);
         center();
 
+        //Get background
         backGround = new Skin(new TextureAtlas("Misc/LevelSelectMenu/levelSelectMenuBackGround.txt"));
         setBackground(backGround.getDrawable("levelSelectMenuBackground"));
 
+        //Load in the back button
         backButtonSkin = new Skin(new TextureAtlas("Buttons/BackButton/backButton.txt"));
         Button.ButtonStyle style = new Button.ButtonStyle();
         style.up = backButtonSkin.getDrawable("back");
@@ -99,8 +101,8 @@ public class LevelSelectMenu extends Table
         btnTable = new Table(paneSkin);
 
 
-        //btnTable.setFillParent(true);
 
+        //Load style of level button
         btnStyle = new TextButton.TextButtonStyle();
         btnStyle.font = paneSkin.getFont("white");
         btnStyle.fontColor = Color.BLUE;
@@ -152,6 +154,7 @@ public class LevelSelectMenu extends Table
             btnTable.add(buttons.get(i-1)).fill().expand().size(30, 30).top().center();
             if(i == LevelManager.maxLevel)
             {
+                //Make sure buttons are arranged in rows of 5
                 while(i%5 !=0)
                 {
                     btnTable.add().fill().expand().size(30, 30).top().left();
@@ -159,6 +162,7 @@ public class LevelSelectMenu extends Table
                 }
             }
 
+            //Make sure buttons are arranged in rows of 5
             if(i%5 == 0 && i < LevelManager.maxLevel){btnTable.row();}
 
             if(i >= LevelManager.maxLevel)
@@ -167,7 +171,7 @@ public class LevelSelectMenu extends Table
 
                 for(int j = 0; j<50*Math.ceil(LevelManager.maxLevel/50.0) - i; j++)
                 {
-                    //btnTable.add().fill().expand().size(30, 30).top().left();
+
 
                     if(j%5 == 0 && LevelManager.maxLevel <=40)
                     {
@@ -194,6 +198,7 @@ public class LevelSelectMenu extends Table
         clear();
         clearChildren();
 
+        //Add the back button
         add(backButton).size(PelletGame.WIDTH/PlayScreen.PPM/12, PelletGame.WIDTH/PlayScreen.PPM/12).left();
         top();
         left();

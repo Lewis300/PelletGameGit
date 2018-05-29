@@ -40,8 +40,10 @@ public class Utilities
     private static boolean shootSimultaneously = false;
     private static boolean waitBetweenFires = false;
 
+    //This method extracts the level from a TileD map file and constructs it in game
     public static Level createLevel(String filename, GameScreenManager gsm)
     {
+        //Extract data from level_.tmx file
         map = mapLoader.load(filename);
 
 
@@ -66,6 +68,8 @@ public class Utilities
         if(ambientLight == 0){System.out.println("AMBIENT LIGHT NOT SET USING DEFAULT VAULE 0.95"); ambientLight = 0.95f;}
 
         PlayScreen.rayHandler.removeAll();
+
+        //Loop through all layers of the map
         for(int i = 0; i<map.getLayers().getCount(); i++)
         {
             MapLayer layer = map.getLayers().get(i);
@@ -80,6 +84,7 @@ public class Utilities
 
             TiledMapTileLayer.Cell cell;
 
+            //Loop through all objects in the current layer
             for(int j = 0; j<objects.getCount() && objects.getCount() > 0; j++)
             {
                 MapObject obj = objects.get(j);
@@ -111,6 +116,8 @@ public class Utilities
                     else if(rotation == 90 || rotation == -270){rot = 270; objY--;}
                     else if(rotation == 180 || rotation == -180){rot = 180; objY--; objX--;}
                     else if(rotation == 270 || rotation == -90){rot = 90; objX--;}
+
+                    rot = 90*((int)(Math.random()*4));
 
                     //Check if it just has an id
                     if(props.containsKey("id"))
@@ -341,6 +348,7 @@ public class Utilities
 
     private static Color[] randomColors = new Color[4];
 
+    //Generates four random colors, used to generate random background gradients in each level
     public static Color[] generateRandomBackgroundColors()
     {
         for(int i = 0; i < randomColors.length; i++)

@@ -19,9 +19,7 @@ import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
 
 
-/**
- * Created by Lewis on 8/12/2017.
- */
+
 
 public class Block extends Obstacle
 {
@@ -136,6 +134,7 @@ public class Block extends Obstacle
 
     }
 
+    //Carries out necesarry actions between frames
     @Override
     public void act(float delta)
     {
@@ -168,7 +167,8 @@ public class Block extends Obstacle
 
             }
         }
-        
+
+        //Handles fading in/out of obstacle when triggered by a Toggle object
         if(fadeIn || fadeOut)
         {
             if(fadeIn)
@@ -237,6 +237,7 @@ public class Block extends Obstacle
         defineBody();
     }
 
+    //Sends pellet in proper direction when being collided with
     @Override
     public void handleCollision(Pellet pellet)
     {

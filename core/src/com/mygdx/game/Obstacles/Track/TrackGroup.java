@@ -5,11 +5,8 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.mygdx.game.Obstacles.Obstacle;
 import com.mygdx.game.Screens.PlayScreen;
 
-/**
- * Created by Lewis on 10/7/2017.
- */
 
-
+// This class defines a group of trackpoints, groups of trackpoints are separated visually by having different colors
 public class TrackGroup
 {
     private TrackPoint[] points = null;
@@ -22,7 +19,7 @@ public class TrackGroup
     {
         this.points = points;
         linkedObId = ob;
-        //System.out.println(linkedObId);
+
         this.color = color;
 
         for(int i = 0; i<points.length; i++)
@@ -42,6 +39,7 @@ public class TrackGroup
         if(!linkedOb.equals(findLinkedOb(linkedObId))){linkedOb = null; linkedOb = findLinkedOb(linkedObId);}
     }
 
+    //Find the object this trackgroup is responsible for moving
     private Obstacle findLinkedOb(int obId)
     {
 
@@ -110,6 +108,7 @@ public class TrackGroup
 
     }
 
+    //Returns a random y-coordinate that is off the screen
     private float getRandOffScreenY()
     {
         if((int)(Math.random()*2) == 1)
@@ -122,6 +121,7 @@ public class TrackGroup
         }
     }
 
+    //Returns a random x-coordinate that is off the screen
     private float getRandOffScreenX()
     {
        if((int)(Math.random()*2) == 1)

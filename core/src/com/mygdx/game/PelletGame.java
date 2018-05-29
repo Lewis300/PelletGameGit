@@ -44,6 +44,7 @@ public class PelletGame extends Game
 	@Override
 	public void create ()
     {
+        //Load saved data from previous runs of the game
         prefs = Gdx.app.getPreferences("game.prefs");
 
         sfg = new SmartFontGenerator();
@@ -54,6 +55,7 @@ public class PelletGame extends Game
 
         appType = Gdx.app.getType();
 
+        //Create spritebatch (used to draw things to the screen)
 		batch = new SpriteBatch();
         gsm = new GameScreenManager(this);
         gsm.setCurrentscreen("playscreen");
@@ -96,6 +98,8 @@ public class PelletGame extends Game
     public static BitmapFont markerFont;
 
     public static SmartFontGenerator sfg;
+
+    //Loads fonts into the game for later drawing
     private static void initFonts()
     {
         try

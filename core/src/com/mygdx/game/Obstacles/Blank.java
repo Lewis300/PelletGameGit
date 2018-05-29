@@ -10,9 +10,7 @@ import com.mygdx.game.Tools.Reusables;
 
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 
-/**
- * Created by Lewis on 12/1/2017.
- */
+
 
 public class Blank extends Obstacle
 {

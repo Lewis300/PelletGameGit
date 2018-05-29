@@ -5,9 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.mygdx.game.Screens.PlayScreen;
 import com.mygdx.game.Tools.GameScreenManager;
 
-/**
- * Created by Lewis on 11/17/2017.
- */
+
 public class LevelButton extends TextButton
 {
     private GameScreenManager gsm;

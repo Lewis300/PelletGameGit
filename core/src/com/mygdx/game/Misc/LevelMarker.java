@@ -9,10 +9,7 @@ import com.mygdx.game.Levels.LevelManager;
 import com.mygdx.game.PelletGame;
 import com.mygdx.game.Screens.PlayScreen;
 
-/**
- * Created by Lewis on 12/10/2017.
- */
-
+//An actor that displays some text, preferably the number of the current level
 public class LevelMarker extends Actor
 {
     private float fontHeight;
