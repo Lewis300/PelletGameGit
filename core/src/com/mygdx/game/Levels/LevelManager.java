@@ -31,7 +31,7 @@ public class LevelManager
 
     public static int levelnum; //What level the games is currently on
 
-    public static int maxLevel = 17;//Maximum level to be allowed on the menu (So that users can't skip levels)                     PelletGame.prefs.getInteger("maxLevel", 1);
+    public static int maxLevel = PelletGame.prefs.getInteger("maxLevel", 1);
     public static int levelToStartAt = 1; //What level opens when the game is opened
     private float scale = 1f; //Scale of the level, used for the spacing and sizing of obstacles
 
@@ -165,6 +165,8 @@ public class LevelManager
         {
             maxLevel = levelnum;
         }
+
+        if(levelnum %3 == 0){PelletGame.handler.showAds(true);}
     }
     
 

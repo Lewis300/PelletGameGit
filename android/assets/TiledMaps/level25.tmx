@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="15" height="25" tilewidth="128" tileheight="128" nextobjectid="206">
+ <tileset firstgid="1" source="untitled.tsx"/>
+ <layer name="tilelayer" width="15" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNwAAAXcAAE=
+  </data>
+ </layer>
+ <layer name="settingslayer" width="15" height="25">
+  <properties>
+   <property name="ambientlight" type="float" value="0.95"/>
+   <property name="scale" type="float" value="2.5"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBi6gI2K6pgpccgooAlgQuOzAjEjlManbrABYtPpcAGMA6R3oADLQDsABwAAlIAAKw==
+  </data>
+ </layer>
+ <objectgroup name="mirrors">
+  <object id="194" gid="2" x="1536" y="1536" width="128" height="128"/>
+  <object id="195" gid="2" x="256" y="1536" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletends">
+  <object id="196" gid="4" x="896" y="2944" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="pelletstarts">
+  <object id="197" gid="3" x="768" y="640" width="128" height="128">
+   <properties>
+    <property name="firedirections" value="d"/>
+    <property name="id" type="int" value="-6"/>
+    <property name="initialdelay" type="float" value="3"/>
+    <property name="pelletpause" type="float" value="2.5"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="trackpoints">
+  <object id="198" gid="6" x="1536" y="512" width="64" height="64">
+   <properties>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-2"/>
+   </properties>
+  </object>
+  <object id="199" gid="6" x="256" y="512" width="64" height="64">
+   <properties>
+    <property name="groupcolor" type="color" value="#ffc21462"/>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-1"/>
+    <property name="linkedid" type="int" value="-6"/>
+   </properties>
+  </object>
+  <object id="200" gid="6" x="896" y="1920" width="64" height="64">
+   <properties>
+    <property name="groupnum" type="int" value="0"/>
+    <property name="id" type="int" value="-3"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="blocks">
+  <object id="201" gid="1" x="896" y="1536" width="128" height="128"/>
+  <object id="202" gid="1" x="896" y="2560" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-8"/>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-5"/>
+   </properties>
+  </object>
+  <object id="203" gid="1" x="896" y="2432" width="128" height="128">
+   <properties>
+    <property name="id" type="int" value="-7"/>
+    <property name="startingaction" value="enable"/>
+    <property name="toggleid" type="int" value="-4"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="toggles">
+  <object id="204" gid="5" x="1024" y="1536" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-5"/>
+    <property name="linkedid" type="int" value="-8"/>
+   </properties>
+  </object>
+  <object id="205" gid="5" x="768" y="1536" width="83" height="83">
+   <properties>
+    <property name="id" type="int" value="-4"/>
+    <property name="linkedid" type="int" value="-7"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="wallportals"/>
+</map>

@@ -133,7 +133,7 @@ public abstract class Obstacle extends Actor
 
     private float moveTimePassed = 0;
 
-    public static final float pointMoveTime = 1f;
+    public static final float pointMoveTime = 1/4f;
 
     public boolean centerObstacleAtAllTimes = true;
 
@@ -398,6 +398,7 @@ public abstract class Obstacle extends Actor
 
     public abstract void setHit(int hit);
 
+    //Gets the velocity of object moving from trackpoint to trackpoint for the current frame
     private float getMoveVelocity(float totalDistance, float cv, float currentTime, float currentDistance, float timeDesired, float dt)
     {
         float currVel = cv;

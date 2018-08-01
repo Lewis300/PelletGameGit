@@ -108,7 +108,7 @@ public class Pellet implements Pool.Poolable
         lifeTime+=dt;
         if(justInteracted){interactTime+=dt;}
         //42.5/speed/ PlayScreen.PPM
-        if(interactTime>=0){justInteracted = false; interactTime = 0;}
+        if(interactTime>=0.05){justInteracted = false; interactTime = 0;}
 
         if(y - pellet.getHeight()*5 > PlayScreen.gameport.getWorldHeight()*1.5 || y<-PlayScreen.gameport.getWorldHeight()*1.5-pellet.getHeight()*5 || x - pellet.getWidth()*20 > PlayScreen.gameport.getWorldWidth()*1.5 || x<-PlayScreen.gameport.getWorldWidth()*1.5-pellet.getWidth()*5){remove = true; removeLight = true;}
 

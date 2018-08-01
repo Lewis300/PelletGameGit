@@ -1,24 +1,91 @@
-package com.mygdx.game;
+package com.mygdx.game.android;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.mygdx.game.PelletGame;
+import com.mygdx.game.Tools.AdHandler;
 
-public class AndroidLauncher extends AndroidApplication
+public class AndroidLauncher extends AndroidApplication implements AdHandler
 {
     private PelletGame game;
+
+    private static final String TAG = "AndroidLauncher";
+    private String appId = "ca-app-pub-4181653067059521~8458411855";
+
+    private final int SHOW_ADS = 1;
+    private final int HIDE_ADS = 0;
+    protected InterstitialAd adView;
+
+    private AdRequest.Builder builder = new AdRequest.Builder();
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg)
+        {
+            switch (msg.what)
+            {
+                case SHOW_ADS:
+                    adView.show();
+                    break;
+            }
+
+        }
+    };
 
 	@Override
 	protected void onCreate (Bundle savedInstanceState)
     {
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-        game = new PelletGame();
+        game = new PelletGame(this);
 		initialize(game, config);
         hideVirtualButtons();
+
+         //Create adview
+        RelativeLayout layout = new RelativeLayout(this);
+        View gameView = initializeForView(new PelletGame(this), config);
+        layout.addView(gameView);
+
+        adView = new InterstitialAd(this);
+        adView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded()
+            {
+                Log.i("Ads", "Ad Loaded!");
+                super.onAdLoaded();
+            }
+
+            @Override
+            public void onAdFailedToLoad(int i)
+            {
+                adView.loadAd(builder.build());
+                super.onAdFailedToLoad(i);
+            }
+
+            @Override
+            public void onAdClosed()
+            {
+                adView.loadAd(builder.build());
+                super.onAdClosed();
+            }
+        });
+
+        adView.setAdUnitId("ca-app-pub-4181653067059521/6714494465");
+
+        builder.addTestDevice("E78A05D3A3D8C10414647F945276BEBA");
+        adView.loadAd(builder.build());
+
+        setContentView(layout);
 	}
 
     @Override
@@ -62,4 +129,9 @@ public class AndroidLauncher extends AndroidApplication
         System.exit(0);
     }
 
+    @Override
+    public void showAds(boolean show)
+    {
+        handler.sendEmptyMessage(show ? SHOW_ADS : HIDE_ADS);
+    }
 }

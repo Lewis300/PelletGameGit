@@ -17,6 +17,7 @@ import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.mygdx.game.Levels.LevelManager;
 import com.mygdx.game.Misc.LevelSelectMenu;
 import com.mygdx.game.Screens.PlayScreen;
+import com.mygdx.game.Tools.AdHandler;
 import com.mygdx.game.Tools.GameScreenManager;
 import com.mygdx.game.Tools.Reusables;
 import com.mygdx.game.Tools.SmartFontGenerator;
@@ -24,6 +25,7 @@ import com.mygdx.game.Tools.SmartFontGenerator;
 public class PelletGame extends Game
 {
 	public static Application.ApplicationType appType;
+    public static AdHandler handler;
 	public SpriteBatch batch;
     public static Preferences prefs;
     public static final int WIDTH = 720;
@@ -40,6 +42,11 @@ public class PelletGame extends Game
 
 
     public static boolean openAgain = true;
+
+    public PelletGame(AdHandler handler)
+    {
+        this.handler = handler;
+    }
 
 	@Override
 	public void create ()
